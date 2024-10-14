@@ -4,8 +4,7 @@
 @use "../global/responsive"as *;
 
 .menu {
-    background: orange;
-    width     : 100%;
+    width: 100%;
 
     ul {
         @include flex(center, center);
@@ -13,7 +12,21 @@
 
     &__item {
         display       : inline-block;
+        letter-spacing: 2px;
         padding       : .5rem 1rem;
+        position      : relative;
+        transition    : .3s ease-in-out;
         text-transform: uppercase;
+
+        @include hover {
+            transform: scale(1.1);
+        }
+
+        img {
+            display   : block;
+            height    : 40px;
+            object-fit: cover;
+            width     : 40px;
+        }
     }
 }

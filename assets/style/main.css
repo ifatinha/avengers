@@ -218,7 +218,6 @@ a {
 }
 
 .menu {
-  background: orange;
   width: 100%;
 }
 .menu ul {
@@ -229,8 +228,20 @@ a {
 }
 .menu__item {
   display: inline-block;
+  letter-spacing: 2px;
   padding: 0.5rem 1rem;
+  position: relative;
+  transition: 0.3s ease-in-out;
   text-transform: uppercase;
+}
+.menu__item:hover {
+  transform: scale(1.1);
+}
+.menu__item img {
+  display: block;
+  height: 40px;
+  object-fit: cover;
+  width: 40px;
 }
 
 .container {
@@ -249,7 +260,6 @@ a {
 }
 
 .header {
-  background: blue;
   align-items: center;
   display: flex;
   gap: 1rem;
@@ -259,6 +269,16 @@ a {
   position: absolute;
   width: 100%;
   z-index: 9999;
+}
+
+.main {
+  background: url("../images/home-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 100%;
+  opacity: 0.2;
+  width: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */

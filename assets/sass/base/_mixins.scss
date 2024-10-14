@@ -9,11 +9,24 @@
     }
 }
 
-
 @mixin hover {
     &:hover {
         @content
     }
+}
+
+@mixin bg-gradient($url, $alpha) {
+    background         : linear-gradient(rgba(0, 0, 0, $alpha), rgba(0, 0, 0, $alpha)), url($url);
+    background-repeat  : no-repeat;
+    background-position: center;
+    background-size    : cover;
+}
+
+@mixin bg-img($url) {
+    background         : url($url);
+    background-repeat  : no-repeat;
+    background-position: center center;
+    background-size    : cover;
 }
 
 @mixin flex($align-items, $justify-content, $gap: 1rem) {

@@ -3,7 +3,6 @@
 @use "../base/mixins"as *;
 
 .header {
-    background: blue;
     @include flex(center, center);
     @include font-primary();
     padding : 1rem 2%;
