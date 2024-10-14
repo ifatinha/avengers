@@ -1,17 +1,17 @@
 @use "sass:map";
 
 $theme-colors  : (
-    "black": #000000, // Preto (para textos e fundos)
     "blue"     : #003DA5, // Azul (Capitão América)
     "dark-gray": #424242, // Cinza Escuro (para textos e fundos)
     "yellow"   : #FDD835, // Amarelo (detalhes dos trajes)
-    "red": #A50034, // Vermelho (Homem de Ferro)
-    "white"    : #FFFFFF // Branco (para contraste e legibilidade)
+    "pure-black": #000000, // Preto (para textos e fundos)
+    "pure-white"    : #FFFFFF, // Branco (para contraste e legibilidade)
+    "red"      : #A50034, // Vermelho (Homem de Ferro)
 );
 
 @mixin apply-color($key) {
-    @if map.has-key($theme-color, $key) {
-        color: map-get($map: $theme-color, $key: $key);
+    @if map.has-key($theme-colors, $key) {
+        color: map-get($map: $theme-colors, $key: $key);
     }
 
     @else {
@@ -20,8 +20,8 @@ $theme-colors  : (
 }
 
 @mixin apply-bg-color($key) {
-    @if map.has-key($theme-color, $key) {
-        background-color: map-get($map: $theme-color, $key: $key);
+    @if map.has-key($theme-colors, $key) {
+        background-color: map-get($map: $theme-colors, $key: $key);
     }
 
     @else {
@@ -30,8 +30,8 @@ $theme-colors  : (
 }
 
 @function get-color($key) {
-    @if map.has-key($theme-color, $key) {
-        @return map-get($map: $theme-color, $key: $key);
+    @if map.has-key($theme-colors, $key) {
+        @return map-get($map: $theme-colors, $key: $key);
     }
 
     @else {

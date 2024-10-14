@@ -1,20 +1,264 @@
-/* Error: Undefined variable.
- *    ,
- * 23 |     @if map.has-key($theme-color, $key) {
- *    |                     ^^^^^^^^^^^^
- *    '
- *   assets\sass\base\_colors.scss 23:21          apply-bg-color()
- *   assets\sass\components\_button.scss 38:9     @use
- *   assets\sass\components\_components.scss 2:1  @use
- *   assets\sass\_main.scss 2:1                   root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a    \2577 \a 23 \2502      @if map.has-key($theme-color, $key) {\d\a    \2502                      ^^^^^^^^^^^^\a    \2575 \a   assets\\sass\\base\\_colors.scss 23:21          apply-bg-color()\a   assets\\sass\\components\\_button.scss 38:9     @use\a   assets\\sass\\components\\_components.scss 2:1  @use\a   assets\\sass\\_main.scss 2:1                   root stylesheet";
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input,
+select {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img,
+video {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+textarea {
+  resize: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: #000000;
+  color: #FFFFFF;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.burger__button {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  min-height: 52px;
+  min-width: 44px;
+  transition: 0.5s ease-in-out;
+}
+@media screen and (min-width: 1920px) {
+  .burger__button {
+    display: none;
+  }
+}
+@media screen and (min-width: 1440px) and (max-width: calc(1920px - 1px)) {
+  .burger__button {
+    display: none;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: calc(1440px - 1px)) {
+  .burger__button {
+    display: none;
+  }
+}
+.burger__button:hover {
+  opacity: 0.5;
+}
+.burger__button-visually {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.burger__button-bars {
+  background-color: #000000;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: all 0.25s linear;
+  width: 22px;
+}
+.burger__button-bars::after, .burger__button-bars::before {
+  background-color: currentColor;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  transition: all 0.25s linear;
+  width: 100%;
+}
+.burger__button-bars::after {
+  transform: translate(0, -8px);
+}
+.burger__button-bars::before {
+  transform: translate(0, 8px);
+}
+
+.burger__active .burger__button-bars {
+  background: transparent !important;
+}
+.burger__active .burger__button-bars::before {
+  transform: rotate(45deg);
+}
+.burger__active .burger__button-bars::after {
+  transform: rotate(-45deg);
+}
+
+.modal {
+  color: #FFFFFF;
+  background: black;
+  height: 100%;
+  inset: 0;
+  overflow-y: auto;
+  opacity: 0;
+  position: fixed;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  visibility: hidden;
+  width: 100%;
+  z-index: 1000;
+}
+.modal::-webkit-scrollbar {
+  width: 0;
+}
+.modal__close-button {
+  align-items: center;
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  color: #FFFFFF;
+  background: transparent;
+  border: transparent;
+  cursor: pointer;
+  font-size: 0.875rem;
+  min-height: 42px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 9999999;
+}
+.modal__close-button img {
+  height: 32px;
+  width: 32px;
+}
+
+.modal__active {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.menu {
+  background: orange;
+  width: 100%;
+}
+.menu ul {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.menu__item {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+}
+@media screen and (min-width: 1440px) and (max-width: calc(1920px - 1px)) {
+  .container {
+    max-width: 1440px;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: calc(1440px - 1px)) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+.header {
+  background: blue;
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  padding: 1rem 2%;
+  position: absolute;
+  width: 100%;
+  z-index: 9999;
+}
+
+/*# sourceMappingURL=main.css.map */
