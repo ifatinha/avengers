@@ -1,0 +1,11 @@
+@use "sass:math";
+@use "sass:map";
+@use "../util/functions"as *;
+
+@mixin font-primary() {
+   font-family: "Poppins", sans-serif;
+}
+
+@function get-font-size($size) {
+   @return px-to-rem($size);
+}

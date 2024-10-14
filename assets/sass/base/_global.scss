@@ -1,0 +1,21 @@
+@use "../base/typography"as *;
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    height: 100%;
+    width : 100%
+}
+
+body {
+    @include font-primary();
+    font-size: get-font-size(16);
+}
+
+a {
+    color          : inherit;
+    text-decoration: none;
+}

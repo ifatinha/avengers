@@ -1,0 +1,86 @@
+// Breakpoints
+$xxl-device: 1920px;
+$xl-device : 1440px;
+$l-device  : 1024px;
+$t-device  : 768px;
+$xs-device : 480px;
+
+// Mixin de media queries
+@mixin devices($size) {
+    @if $size==xxl {
+        @media screen and (min-width: $xxl-device) {
+            @content;
+        }
+    }
+
+    @else if $size==xl {
+        @media screen and (min-width: $xl-device) and (max-width: calc(#{$xxl-device} - 1px)) {
+            @content;
+        }
+    }
+
+    @else if $size==l {
+        @media screen and (min-width: $l-device) and (max-width: calc(#{$xl-device} - 1px)) {
+            @content;
+        }
+    }
+
+    @else if $size==t {
+        @media screen and (min-width: $t-device) and (max-width: calc(#{$l-device} - 1px)) {
+            @content;
+        }
+    }
+
+    @else if $size==m {
+        @media screen and (max-width: calc(#{$t-device} - 1px)) {
+            @content;
+        }
+    }
+
+    @else if $size==xs {
+        @media screen and (max-width: $xs-device) {
+            @content;
+        }
+    }
+
+    @else {
+        @warn "Tamanho #{$size} não é válido. Use 'xxl', 'xl', 'l', 't', 'm', ou 'xs'.";
+    }
+}
+
+// Mixin para dispositivos grandes
+@mixin devices-large-screens {
+    @include devices(xxl) {
+        @content;
+    }
+
+    @include devices(xl) {
+        @content;
+    }
+
+    @include devices(l) {
+        @content;
+    }
+}
+
+// Mixin para dispositivos pequenos
+@mixin devices-small-screens {
+    @include devices(t) {
+        @content;
+    }
+
+    @include devices(m) {
+        @content;
+    }
+
+    @include devices(xs) {
+        @content;
+    }
+}
+
+// Mixin para landscape orientation em dispositivos móveis
+@mixin mobile-landscape {
+    @media screen and (max-width: 1024px) and (orientation: landscape) {
+        @content;
+    }
+}

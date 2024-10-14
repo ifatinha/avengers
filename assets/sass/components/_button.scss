@@ -1,0 +1,80 @@
+@use "../base/colors"as *;
+@use "../base/mixins"as *;
+@use "../base/typography"as *;
+@use "../global/responsive"as *;
+
+.burger__button {
+    @include flex(center, center, 8px);
+    background: transparent;
+    border    : none;
+    cursor    : pointer;
+    min-height: 52px;
+    min-width : 44px;
+    transition: .5s ease-in-out;
+
+    @include devices-large-screens() {
+        display: none;
+    }
+
+    @include hover {
+        opacity: .5;
+    }
+
+    &-visually {
+        font-size  : get-font-size(16);
+        font-weight: 600;
+
+        // @include font-primary();
+        // clip     : rect(0, 0, 0, 0);
+        // font-size: get-font-size(14);
+        // height   : 1px;
+        // overflow : hidden;
+        // padding  : 0;
+        // position : absolute;
+        // width    : 1px;
+    }
+
+    &-bars {
+        @include apply-bg-color("pure-black");
+        display   : block;
+        height    : 2px;
+        position  : relative;
+        transition: all .25s linear;
+        width     : 22px;
+
+        &::after,
+        &::before {
+            background-color: currentColor;
+            content         : "";
+            display         : block;
+            height          : 100%;
+            position        : absolute;
+            right           : 0;
+            transition      : all .25s linear;
+            width           : 100%;
+        }
+
+        &::after {
+            transform: translate(0, -8px);
+        }
+
+        &::before {
+            transform: translate(0, 8px);
+        }
+    }
+}
+
+.burger__active {
+
+    .burger__button-bars {
+        background: transparent !important;
+
+        &::before {
+            transform: rotate(45deg);
+        }
+
+        &::after {
+            transform: rotate(-45deg);
+        }
+    }
+}

@@ -1,0 +1,24 @@
+@use "sass:math";
+
+@mixin round($size, $circle: false) {
+    height: $size;
+    width : $size;
+
+    @if $circle {
+        border-radius: math.div($size, 2);
+    }
+}
+
+
+@mixin hover {
+    &:hover {
+        @content
+    }
+}
+
+@mixin flex($align-items, $justify-content, $gap: 1rem) {
+    align-items    : $align-items;
+    display        : flex;
+    gap            : $gap;
+    justify-content: $justify-content;
+}

@@ -1,0 +1,47 @@
+@use "../base/colors"as *;
+@use "../base/typography"as *;
+@use "../base/mixins"as *;
+
+.modal {
+    @include apply-color("pure-white");
+    background: rgba($color: #000000, $alpha: 1);
+    height    : 100%;
+    inset     : 0;
+    overflow-y: auto;
+    opacity   : 0;
+    position  : fixed;
+    transform : translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    visibility: hidden;
+    width     : 100%;
+    z-index   : 1000;
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+
+    &__close-button {
+        @include flex(center, center, 4px);
+        @include apply-color("pure-white");
+        background: transparent;
+        border    : transparent;
+        cursor    : pointer;
+        font-size : get-font-size(14);
+        min-height: 42px;
+        position  : absolute;
+        right     : 20px;
+        top       : 20px;
+        z-index   : 9999999;
+
+        img {
+            height: 32px;
+            width : 32px;
+        }
+    }
+}
+
+.modal__active {
+    opacity   : 1;
+    transform : translateY(0);
+    visibility: visible;
+}

@@ -1,0 +1,18 @@
+@use "../base/colors"as *;
+@use "../base/typography"as *;
+@use "../base/mixins"as *;
+
+.header {
+
+    @include flex(center, space-between);
+    @include font-primary();
+    background: #e7e7e7;
+    padding   : 1rem 2%;
+    width     : 100%;
+
+    &__brand {
+        font-size     : get-font-size(24);
+        font-weight   : bold;
+        text-transform: uppercase;
+    }
+}

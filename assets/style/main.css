@@ -1,0 +1,20 @@
+/* Error: Undefined variable.
+ *    ,
+ * 23 |     @if map.has-key($theme-color, $key) {
+ *    |                     ^^^^^^^^^^^^
+ *    '
+ *   assets\sass\base\_colors.scss 23:21          apply-bg-color()
+ *   assets\sass\components\_button.scss 38:9     @use
+ *   assets\sass\components\_components.scss 2:1  @use
+ *   assets\sass\_main.scss 2:1                   root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined variable.\a    \2577 \a 23 \2502      @if map.has-key($theme-color, $key) {\d\a    \2502                      ^^^^^^^^^^^^\a    \2575 \a   assets\\sass\\base\\_colors.scss 23:21          apply-bg-color()\a   assets\\sass\\components\\_button.scss 38:9     @use\a   assets\\sass\\components\\_components.scss 2:1  @use\a   assets\\sass\\_main.scss 2:1                   root stylesheet";
+}
