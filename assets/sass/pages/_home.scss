@@ -1,0 +1,96 @@
+@use "../base/mixins"as *;
+@use "../base/colors"as *;
+@use "../base/typography"as *;
+@use "../global/responsive"as *;
+
+.movies {
+    @include flex(center, end, 2);
+    flex-direction: column;
+    height        : 100%;
+    padding       : 0 2% 1rem;
+    width         : 100%;
+
+    @include devices-small-screens {
+        justify-content: flex-end;
+    }
+
+    &__cards {
+        @include flex(center, space-evenly);
+        overflow: auto;
+        position: relative;
+        width   : 100%;
+    }
+}
+
+.movie__card {
+    @include apply-bg-color("pure-white");
+    border-radius: .5rem;
+    box-shadow   : 0 4px 10px rgba(0, 0, 0, 0.2);
+    display      : block;
+    flex         : 1 1 calc(100% / 4);
+    height       : 65vh;
+    overflow     : hidden;
+}
+
+.card__content {
+    height  : 100%;
+    overflow: hidden;
+    position: relative;
+    width   : 100%;
+}
+
+.card__image {
+    border-radius: .5rem;
+    height       : 100%;
+    object-fit   : cover;
+}
+
+.card__title {
+    bottom        : 12px;
+    display       : block;
+    font-size     : get-font-size(32);
+    position      : absolute;
+    text-transform: uppercase;
+    text-align    : center;
+    z-index       : 9999;
+    width         : 100%;
+
+    @include devices(m) {
+        font-size: get-font-size(18);
+    }
+}
+
+.movies__control {
+    @include flex(center, center);
+    margin-top: 2rem;
+    position  : relative;
+    width     : 100%;
+
+    &-button {
+        @include apply-bg-color("red");
+        @include apply-color("pure-white");
+        border-radius: 50%;
+        border       : 2px solid #fff;
+        cursor       : pointer;
+        font-size    : get-font-size(16);
+        font-weight  : bolder;
+        height       : 2.5rem;
+        margin-right : 0.5rem;
+        transition   : .5s ease-in-out;
+        width        : 2.5rem;
+        z-index      : 10;
+
+        @include hover() {
+            transform: scale(1.1);
+        }
+    }
+
+    &-line {
+        @include apply-bg-color("pure-white");
+        height   : 2px;
+        margin   : 0 auto;
+        max-width: 500px;
+        position : absolute;
+        width    : 100%;
+    }
+}

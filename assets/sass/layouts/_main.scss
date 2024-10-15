@@ -1,8 +1,7 @@
 @use "../base/mixins"as *;
 
 .main {
-    @include bg-img("../images/home-bg.jpg");
+    @include bg-gradient("../images/home-bg.jpg", .8);
     height : 100%;
-    opacity: .2;
     width  : 100%;
 }

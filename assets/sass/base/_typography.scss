@@ -3,7 +3,13 @@
 @use "../util/functions"as *;
 
 @mixin font-primary() {
-   font-family: "Poppins", sans-serif;
+   font-family: "Roboto", sans-serif;
+}
+
+@mixin font-secondary() {
+   font-family   : "Bebas Neue", sans-serif;
+   letter-spacing: 1px;
+   text-transform: uppercase;
 }
 
 @function get-font-size($size) {
