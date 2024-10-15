@@ -333,7 +333,7 @@ a {
   inset: 0;
   opacity: 0.2;
   position: absolute;
-  transition: opacity 0.5s ease-in-out, background-image 0.5s ease-in-out;
+  transition: opacity 1s ease-in-out, background-image 0.5s ease-in-out;
   width: 100%;
 }
 .movies__cards {
@@ -376,6 +376,7 @@ a {
   position: absolute;
   text-transform: uppercase;
   text-align: center;
+  transition: 0.5s ease-in-out;
   z-index: 9999;
   width: 100%;
 }
@@ -388,6 +389,9 @@ a {
 .movie__card--hovered {
   filter: none;
   transform: translateY(-12px);
+}
+.movie__card--hovered .card__title {
+  bottom: 50%;
 }
 
 .movies__button {

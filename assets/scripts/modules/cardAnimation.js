@@ -22,8 +22,8 @@ export const animationCardHover = () => {
       card.classList.remove("movie__card--hovered")
     );
     movieContainer.id = "";
-    //cardsElements[0].classList.add("movie__card--hovered");
-    //movieContainer.id = cardsElements[0].dataset.movie;
+    cardsElements[0].classList.add("movie__card--hovered");
+    movieContainer.id = cardsElements[0].dataset.movie;
   };
 
   cardsElements.forEach((card) => {
