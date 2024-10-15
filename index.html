@@ -78,10 +78,9 @@
 
     <main class="main">
         <article class="movies">
-
             <ul class="movies__cards">
                 <li>
-                    <a href="#" class="movie__card" data-id="1">
+                    <a href="#" class="movie__card movie__card--hovered" data-movie="avengers">
                         <div class="card__content">
                             <img src="assets/images/the-avengers-poster.jpg" alt="The Avengers Poster"
                                 class="card__image">
@@ -90,7 +89,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="movie__card" data-id="2">
+                    <a href="#" class="movie__card" data-movie="ageOfUltron">
                         <div class="card__content">
                             <img src="assets/images/age-of-ultron-poster.jpg" alt="Age of Ultron Poster"
                                 class="card__image">
@@ -99,7 +98,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="movie__card" data-id="3">
+                    <a href="#" class="movie__card" data-movie="infinityWar">
                         <div class="card__content">
                             <img src="assets/images/infinity-war-poster.jpg" alt="Infinity War Poster"
                                 class="card__image">
@@ -108,7 +107,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="movie__card" data-id="4">
+                    <a href="#" class="movie__card" data-movie="endgame">
                         <div class="card__content">
                             <img src="assets/images/endgame-poster.jpg" alt="Endgame Poster" class="card__image">
                             <span class="card__title">Endgame</span>
@@ -117,17 +116,17 @@
                 </li>
             </ul>
 
-            <div class="movies__control">
-                <button class="movies__control-button">01</button>
-                <button class="movies__control-button">02</button>
-                <button class="movies__control-button">03</button>
-                <button class="movies__control-button">04</button>
-                <div class="movies__control-line"></div>
-            </div>
-
+            <button class="movies__button" id="arrowRight">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+            <button class="movies__button" id="arrowLeft">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
         </article>
     </main>
 
+    <script src="https://kit.fontawesome.com/4980d49b51.js" crossorigin="anonymous"></script>
+    <script type="module" src="assets/scripts/app.js"></script>
 </body>
 
 </html>

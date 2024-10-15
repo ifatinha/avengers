@@ -237,7 +237,7 @@ a {
   line-height: 1.4;
   padding: 0.7rem 1rem;
   position: relative;
-  transition: 0.3s ease-in-out;
+  transition: 0.5s ease-in-out;
   text-transform: uppercase;
 }
 .menu__item:hover {
@@ -307,10 +307,6 @@ a {
 }
 
 .main {
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../images/home-bg.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   height: 100%;
   width: 100%;
 }
@@ -318,46 +314,46 @@ a {
 .movies {
   align-items: center;
   display: flex;
-  gap: 2;
-  justify-content: end;
+  gap: 1rem;
+  justify-content: center;
   flex-direction: column;
   height: 100%;
-  padding: 0 2% 1rem;
+  padding: 60px 2% 1rem;
+  position: relative;
+  transition: 0.5s ease-in-out;
   width: 100%;
 }
-@media screen and (min-width: 768px) and (max-width: calc(1024px - 1px)) {
-  .movies {
-    justify-content: flex-end;
-  }
-}
-@media screen and (max-width: calc(768px - 1px)) {
-  .movies {
-    justify-content: flex-end;
-  }
-}
-@media screen and (max-width: 480px) {
-  .movies {
-    justify-content: flex-end;
-  }
+.movies::before {
+  background: url("../images/home-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  content: "";
+  height: 100%;
+  inset: 0;
+  opacity: 0.2;
+  position: absolute;
+  transition: opacity 0.5s ease-in-out, background-image 0.5s ease-in-out;
+  width: 100%;
 }
 .movies__cards {
   align-items: center;
   display: flex;
   gap: 1rem;
   justify-content: space-evenly;
-  overflow: auto;
   position: relative;
   width: 100%;
 }
 
 .movie__card {
-  background-color: #FFFFFF;
   border-radius: 0.5rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   display: block;
   flex: 1 1 25%;
-  height: 65vh;
+  filter: grayscale(100%);
+  height: 60vh;
   overflow: hidden;
+  transition: 0.5s ease-in-out;
 }
 
 .card__content {
@@ -376,7 +372,7 @@ a {
 .card__title {
   bottom: 12px;
   display: block;
-  font-size: 2rem;
+  font-size: 1.5rem;
   position: absolute;
   text-transform: uppercase;
   text-align: center;
@@ -389,39 +385,65 @@ a {
   }
 }
 
-.movies__control {
-  align-items: center;
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin-top: 2rem;
-  position: relative;
-  width: 100%;
+.movie__card--hovered {
+  filter: none;
+  transform: translateY(-12px);
 }
-.movies__control-button {
-  background-color: #A50034;
+
+.movies__button {
   color: #FFFFFF;
-  border-radius: 50%;
-  border: 2px solid #fff;
+  background: transparent;
+  border: none;
   cursor: pointer;
-  font-size: 1rem;
-  font-weight: bolder;
-  height: 2.5rem;
-  margin-right: 0.5rem;
+  font-size: 2.625rem;
   transition: 0.5s ease-in-out;
-  width: 2.5rem;
-  z-index: 10;
+  position: absolute;
 }
-.movies__control-button:hover {
+.movies__button:hover {
+  color: #A50034;
   transform: scale(1.1);
 }
-.movies__control-line {
-  background-color: #FFFFFF;
-  height: 2px;
-  margin: 0 auto;
-  max-width: 500px;
-  position: absolute;
-  width: 100%;
+
+#arrowLeft {
+  left: 1rem;
+  top: 50%;
+}
+
+#arrowRight {
+  right: 1rem;
+  top: 50%;
+}
+
+.movies#avengers::before {
+  background: url("../images/the-avengers-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 0.4;
+}
+
+.movies#ageOfUltron::before {
+  background: url("../images/age-of-ultron-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 0.4;
+}
+
+.movies#infinityWar::before {
+  background: url("../images/infinity-war-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 0.4;
+}
+
+.movies#endgame::before {
+  background: url("../images/endgame-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 0.4;
 }
 
 /*# sourceMappingURL=main.css.map */
