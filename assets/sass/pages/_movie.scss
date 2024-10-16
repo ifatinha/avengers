@@ -1,6 +1,7 @@
 @use "../base/colors"as *;
 @use "../base/typography"as *;
 @use "../base/mixins"as *;
+@use "../global/responsive"as *;
 
 .carousel__movies {
     height  : 100%;
@@ -14,13 +15,36 @@
     width : 100%;
 
     &__content {
-        max-width: 500px;
-        padding  : 1%;
+        max-width: 600px;
+        padding  : 1% 2%;
         width    : 100%;
 
         span {
+            display       : block;
             font-weight   : 500;
             letter-spacing: 4px;
+            margin-bottom : .5rem;
+        }
+
+        h1 {
+            @include font-secondary();
+            font-size    : get-font-size(100);
+            line-height  : .9;
+            margin-bottom: .5rem;
+
+            @include devices(m) {
+                font-size  : get-font-size(80);
+                line-height: 1;
+            }
+
+            @include devices(xs) {
+                font-size: get-font-size(80);
+            }
+        }
+
+        a {
+            font-weight   : 500;
+            text-transform: uppercase
         }
     }
 }
