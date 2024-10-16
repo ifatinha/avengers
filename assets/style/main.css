@@ -308,6 +308,12 @@ a {
   width: 100%;
 }
 
+.carousel__movies {
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
 .movie {
   align-items: center;
   display: flex;

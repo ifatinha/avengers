@@ -2,15 +2,21 @@
 @use "../base/typography"as *;
 @use "../base/mixins"as *;
 
+.carousel__movies {
+    height  : 100%;
+    position: relative;
+    width   : 100%;
+}
+
 .movie {
     @include flex(center, center);
     height: 100%;
     width : 100%;
 
     &__content {
-        max-width : 500px;
-        padding   : 1%;
-        width     : 100%;
+        max-width: 500px;
+        padding  : 1%;
+        width    : 100%;
 
         span {
             font-weight   : 500;
