@@ -1,15 +1,20 @@
-import { updateAriaAttributes } from "../util/ariaAttributesUtils.js";
+import {
+  updateAriaAttributes,
+  updateAriaHidden,
+} from "../util/ariaAttributesUtils.js";
 
 const getElements = () => ({
   modal: document.querySelector("#modalMenu"),
   openButton: document.querySelector("#menuOpenButton"),
   closeButton: document.querySelector("#menuModalCloseButton"),
+  elements: document.querySelectorAll(".page-content"),
 });
 
-const handleModalToggle = (modal, button, isOpen) => {
+const handleModalToggle = (modal, button, isOpen, elements) => {
   button.classList.toggle("burger__active", isOpen);
   modal.classList.toggle("modal__active", isOpen);
   updateAriaAttributes(button, isOpen);
+  updateAriaHidden(modal, isOpen, elements);
 };
 
 const attachEventListeners = (button, handler) => {
@@ -22,27 +27,28 @@ const attachEventListeners = (button, handler) => {
 };
 
 export const openMenuModal = () => {
-  const { modal, openButton, closeButton } = getElements();
+  const { modal, openButton, closeButton, elements } = getElements();
+  console.log(elements);
 
-  if (!modal || !openButton || !closeButton) {
+  if (!modal || !openButton || !closeButton || !elements) {
     console.error("Elements not found.");
     return;
   }
 
   attachEventListeners(openButton, () =>
-    handleModalToggle(modal, openButton, true)
+    handleModalToggle(modal, openButton, true, elements)
   );
 };
 
 export const closeMenuModal = () => {
-  const { modal, openButton, closeButton } = getElements();
+  const { modal, openButton, closeButton, elements } = getElements();
 
-  if (!modal || !openButton || !closeButton) {
+  if (!modal || !openButton || !closeButton || !elements) {
     console.error("Elements not found.");
     return;
   }
 
   attachEventListeners(closeButton, () =>
-    handleModalToggle(modal, openButton, false)
+    handleModalToggle(modal, openButton, false, elements)
   );
 };

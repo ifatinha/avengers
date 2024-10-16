@@ -8,3 +8,8 @@ export const updateAriaAttributes = (button, isOpen) => {
     button.setAttribute(key, value);
   });
 };
+
+export const updateAriaHidden = (modal, isHidden, elements) => {
+  modal.setAttribute("aria-hidden", !isHidden);
+  elements.forEach((element) => element.setAttribute("aria-hidden", isHidden));
+};
