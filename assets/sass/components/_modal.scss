@@ -22,8 +22,8 @@
 
     &__header {
         @include flex(center, space-between, 0);
-        padding-top   : .5rem;
-        padding-bottom: .5rem;
+        padding-top   : 1rem;
+        padding-bottom: 1rem;
     }
 
     &__close-button {

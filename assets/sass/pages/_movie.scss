@@ -11,13 +11,19 @@
 
 .movie {
     @include flex(center, center);
-    height: 100%;
-    width : 100%;
+    height    : 100%;
+    inset     : 0;
+    opacity   : 0;
+    position  : absolute;
+    transition: 1s ease-in-out;
+    width     : 100%;
+    z-index   : -1;
 
     &__content {
-        max-width: 600px;
-        padding  : 1% 2%;
-        width    : 100%;
+        max-width    : 600px;
+        margin-bottom: 2rem;
+        padding      : 1% 2%;
+        width        : 100%;
 
         span {
             display       : block;
@@ -30,7 +36,7 @@
             @include font-secondary();
             font-size    : get-font-size(100);
             line-height  : .9;
-            margin-bottom: .5rem;
+            margin-bottom: 2rem;
 
             @include devices(m) {
                 font-size  : get-font-size(80);
@@ -44,11 +50,70 @@
 
         a {
             font-weight   : 500;
-            text-transform: uppercase
+            letter-spacing: 1px;
+            padding       : 12px 0;
+            position      : relative;
+            text-transform: uppercase;
+            transition    : .3s ease-in-out;
+
+            &::after {
+                @include apply-bg-color("red");
+                bottom    : 0;
+                content   : "";
+                display   : block;
+                height    : 2px;
+                position  : absolute;
+                transition: .3s ease-in-out;
+                width     : 30%;
+            }
+
+            @include hover {
+                &::after {
+                    width: 100%;
+                }
+            }
         }
     }
 }
 
+.movie--activated {
+    opacity: 1;
+    z-index: 1;
+}
+
+.carousel__dots {
+    @include flex(center, start, 8px);
+    bottom    : 24%;
+    left      : 17%;
+    margin-top: 3rem;
+    position  : absolute;
+    z-index   : 1;
+
+    .button-dot {
+        border-radius: 50%;
+        border       : none;
+        cursor       : pointer;
+        height       : 12px;
+        width        : 12px;
+    }
+}
+
+.dot--activated {
+    @include apply-bg-color("red");
+}
+
 #theAvengers {
-    @include bg-gradient("../images/the-avengers-bg.jpg", .6);
+    @include bg-gradient("../images/the-avengers-bg.jpg", .8);
+}
+
+#ageOfUltron {
+    @include bg-gradient("../images/age-of-ultron-bg.jpg", .8);
+}
+
+#infinityWar {
+    @include bg-gradient("../images/infinity-war-bg.jpg", .8);
+}
+
+#endgame {
+    @include bg-gradient("../images/endgame-bg.jpg", .8);
 }
