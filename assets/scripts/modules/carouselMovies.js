@@ -43,8 +43,8 @@ const showCarousel = (carouselButtons, carouselItems, interval = 4000) => {
     });
   });
 
-  // showSlide(currentIndex);
-  // startAutoSlide();
+  showSlide(currentIndex);
+  startAutoSlide();
 };
 
 export const initializeCarouselMovies = () => {

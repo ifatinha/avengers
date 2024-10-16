@@ -321,6 +321,7 @@ a {
   justify-content: center;
   height: 100%;
   inset: 0;
+  margin-bottom: 1rem;
   opacity: 0;
   position: absolute;
   transition: 1s ease-in-out;
@@ -328,8 +329,10 @@ a {
   z-index: -1;
 }
 .movie__content {
-  max-width: 600px;
+  background: orange;
+  max-width: 500px;
   margin-bottom: 2rem;
+  min-height: 270px;
   padding: 1% 2%;
   width: 100%;
 }
@@ -345,7 +348,6 @@ a {
   text-transform: uppercase;
   font-size: 6.25rem;
   line-height: 0.9;
-  margin-bottom: 2rem;
 }
 @media screen and (max-width: calc(768px - 1px)) {
   .movie__content h1 {
@@ -359,6 +361,7 @@ a {
   }
 }
 .movie__content a {
+  display: inline-block;
   font-weight: 500;
   letter-spacing: 1px;
   padding: 12px 0;
@@ -390,39 +393,34 @@ a {
   display: flex;
   gap: 8px;
   justify-content: start;
-  bottom: 24%;
-  left: 17%;
+  bottom: 5%;
   margin-top: 3rem;
   position: absolute;
+  right: 15%;
   z-index: 1;
 }
-@media screen and (min-width: 768px) and (max-width: calc(1024px - 1px)) {
-  .carousel__dots {
-    bottom: 30%;
-    left: 3%;
-  }
-}
-@media screen and (max-width: calc(768px - 1px)) {
-  .carousel__dots {
-    bottom: 22%;
-    left: 2%;
-  }
-}
-@media screen and (max-width: 480px) {
-  .carousel__dots {
-    left: 2%;
-  }
-}
 .carousel__dots .button-dot {
-  border-radius: 50%;
   border: none;
   cursor: pointer;
-  height: 12px;
-  width: 12px;
 }
 
 .dot--activated {
   background-color: #C1272D;
+}
+
+.carousel__button {
+  position: absolute;
+  z-index: 2;
+}
+
+#prev {
+  bottom: 5%;
+  left: 15%;
+}
+
+#next {
+  right: 15%;
+  top: 20%;
 }
 
 #theAvengers {

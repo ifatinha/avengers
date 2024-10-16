@@ -11,17 +11,20 @@
 
 .movie {
     @include flex(center, center);
-    height    : 100%;
-    inset     : 0;
-    opacity   : 0;
-    position  : absolute;
-    transition: 1s ease-in-out;
-    width     : 100%;
-    z-index   : -1;
+    height       : 100%;
+    inset        : 0;
+    margin-bottom: 1rem;
+    opacity      : 0;
+    position     : absolute;
+    transition   : 1s ease-in-out;
+    width        : 100%;
+    z-index      : -1;
 
     &__content {
-        max-width    : 600px;
+        background   : orange;
+        max-width    : 500px;
         margin-bottom: 2rem;
+        min-height   : 270px;
         padding      : 1% 2%;
         width        : 100%;
 
@@ -34,9 +37,8 @@
 
         h1 {
             @include font-secondary();
-            font-size    : get-font-size(100);
-            line-height  : .9;
-            margin-bottom: 2rem;
+            font-size  : get-font-size(100);
+            line-height: .9;
 
             @include devices(m) {
                 font-size  : get-font-size(80);
@@ -49,6 +51,7 @@
         }
 
         a {
+            display       : inline-block;
             font-weight   : 500;
             letter-spacing: 1px;
             padding       : 12px 0;
@@ -83,37 +86,47 @@
 
 .carousel__dots {
     @include flex(center, start, 8px);
-    bottom    : 24%;
-    left      : 17%;
+    bottom    : 5%;
     margin-top: 3rem;
     position  : absolute;
+    right     : 15%;
     z-index   : 1;
 
     @include devices(t) {
-        bottom: 30%;
-        left  : 3%;
+        
     }
 
     @include devices(m) {
-        bottom: 22%;
-        left  : 2%;
+        
     }
 
     @include devices(xs) {
-        left: 2%;
+        
     }
 
     .button-dot {
-        border-radius: 50%;
         border       : none;
         cursor       : pointer;
-        height       : 12px;
-        width        : 12px;
     }
 }
 
 .dot--activated {
     @include apply-bg-color("red");
+}
+
+.carousel__button {
+    position: absolute;
+    z-index : 2;
+}
+
+#prev {
+    bottom: 5%;
+    left  : 15%;
+}
+
+#next {
+    right: 15%;
+    top  : 20%;
 }
 
 #theAvengers {
