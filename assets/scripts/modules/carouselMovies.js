@@ -7,22 +7,28 @@ const showCarousel = (
   let currentIndex = 0;
   let autoSlide;
 
+  const updateSlideActivation = (items, index, activeClass) => {
+    items.forEach((item, idx) => {
+      item.classList.toggle(activeClass, idx === index);
+    });
+  };
+
   const showSlide = (buttonId) => {
-    currentIndex = buttonId === "next" ? currentIndex + 1 : currentIndex - 1;
+    if (autoSlide === undefined) {
+      updateSlideActivation(carouselItems, currentIndex, "movie--activated");
+      updateSlideActivation(carouselCount, currentIndex, "dot--activated");
+    } else {
+      currentIndex = buttonId === "next" ? currentIndex + 1 : currentIndex - 1;
 
-    if (currentIndex > carouselItems.length - 1) {
-      currentIndex = 0;
-    } else if (currentIndex < 0) {
-      currentIndex = carouselItems.length - 1;
+      if (currentIndex > carouselItems.length - 1) {
+        currentIndex = 0;
+      } else if (currentIndex < 0) {
+        currentIndex = carouselItems.length - 1;
+      }
+
+      updateSlideActivation(carouselItems, currentIndex, "movie--activated");
+      updateSlideActivation(carouselCount, currentIndex, "dot--activated");
     }
-
-    carouselItems.forEach((item, idx) => {
-      item.classList.toggle("movie--activated", idx === currentIndex);
-    });
-
-    carouselCount.forEach((item, idx) => {
-      item.classList.toggle("dot--activated", idx === currentIndex);
-    });
   };
 
   //Passa o proximo slide para o autoplay

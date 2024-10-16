@@ -411,7 +411,7 @@ a {
   text-transform: lowercase;
   padding: 4px 20px;
   position: absolute;
-  z-index: 9999;
+  z-index: 99;
 }
 .carousel__button:hover::before {
   width: 100%;
@@ -437,6 +437,11 @@ a {
 #next {
   right: 112px;
   top: 20%;
+}
+@media screen and (min-width: 1920px) {
+  #next {
+    right: 144px;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: calc(1024px - 1px)) {
   #next {
@@ -466,6 +471,11 @@ a {
   bottom: 10%;
   left: 112px;
 }
+@media screen and (min-width: 1920px) {
+  #prev {
+    left: 144px;
+  }
+}
 @media screen and (min-width: 768px) and (max-width: calc(1024px - 1px)) {
   #prev {
     left: 1rem;
@@ -492,6 +502,11 @@ a {
   position: absolute;
   right: 112px;
   z-index: 1;
+}
+@media screen and (min-width: 1920px) {
+  .carousel__dots {
+    right: 144px;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: calc(1024px - 1px)) {
   .carousel__dots {
