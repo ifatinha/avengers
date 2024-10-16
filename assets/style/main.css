@@ -308,4 +308,29 @@ a {
   width: 100%;
 }
 
+.movie {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.movie__content {
+  max-width: 500px;
+  padding: 1%;
+  width: 100%;
+}
+.movie__content span {
+  font-weight: 500;
+  letter-spacing: 4px;
+}
+
+#theAvengers {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/the-avengers-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 /*# sourceMappingURL=main.css.map */
