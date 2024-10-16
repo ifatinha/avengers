@@ -28,8 +28,7 @@ const attachEventListeners = (button, handler) => {
 
 export const openMenuModal = () => {
   const { modal, openButton, closeButton, elements } = getElements();
-  console.log(elements);
-
+  
   if (!modal || !openButton || !closeButton || !elements) {
     console.error("Elements not found.");
     return;

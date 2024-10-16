@@ -396,6 +396,23 @@ a {
   position: absolute;
   z-index: 1;
 }
+@media screen and (min-width: 768px) and (max-width: calc(1024px - 1px)) {
+  .carousel__dots {
+    bottom: 30%;
+    left: 3%;
+  }
+}
+@media screen and (max-width: calc(768px - 1px)) {
+  .carousel__dots {
+    bottom: 22%;
+    left: 2%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .carousel__dots {
+    left: 2%;
+  }
+}
 .carousel__dots .button-dot {
   border-radius: 50%;
   border: none;

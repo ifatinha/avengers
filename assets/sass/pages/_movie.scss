@@ -89,6 +89,20 @@
     position  : absolute;
     z-index   : 1;
 
+    @include devices(t) {
+        bottom: 30%;
+        left  : 3%;
+    }
+
+    @include devices(m) {
+        bottom: 22%;
+        left  : 2%;
+    }
+
+    @include devices(xs) {
+        left: 2%;
+    }
+
     .button-dot {
         border-radius: 50%;
         border       : none;
