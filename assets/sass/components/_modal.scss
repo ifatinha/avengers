@@ -4,7 +4,7 @@
 
 .modal {
     @include apply-color("pure-white");
-    background: rgba($color: #000000, $alpha: 1);
+    background: rgb(206, 24, 49);
     height    : 100%;
     inset     : 0;
     overflow-y: auto;
@@ -14,28 +14,62 @@
     transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
     visibility: hidden;
     width     : 100%;
-    z-index   : 1000;
+    z-index   : 9999;
 
     &::-webkit-scrollbar {
         width: 0;
     }
 
+    &__header {
+        @include flex(center, space-between, 0);
+        padding-top   : .5rem;
+        padding-bottom: .5rem;
+    }
+
     &__close-button {
-        @include flex(center, center, 4px);
+        @include font-secondary();
+        @include flex(center, center, 10px);
         @include apply-color("pure-white");
         background: transparent;
         border    : transparent;
         cursor    : pointer;
-        font-size : get-font-size(14);
-        min-height: 42px;
-        position  : absolute;
-        right     : 20px;
-        top       : 20px;
-        z-index   : 9999999;
+        font-size : get-font-size(18);
+        min-height: 50px;
+        min-width : 44px;
+        position  : relative;
+        transition: .5s ease-in-out;
 
-        img {
-            height: 32px;
-            width : 32px;
+        @include hover {
+            &::after {
+                transform: rotate(225deg);
+            }
+
+            &::before {
+                transform: rotate(135deg);
+            }
+        }
+
+        &::after,
+        &::before {
+            background: currentColor;
+            content   : "";
+            height    : 2px;
+            position  : absolute;
+            right     : 2px;
+            transition: .6s ease-in-out;
+            width     : 22px;
+        }
+
+        &::after {
+            transform: rotate(45deg);
+
+            @include hover {
+                transform: translate(-50%, -50%) rotate(225deg);
+            }
+        }
+
+        &::before {
+            transform: rotate(-45deg);
         }
     }
 }

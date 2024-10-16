@@ -1,9 +1,10 @@
-import { animationCardHover } from "./modules/cardAnimation.js";
+import { openMenuModal, closeMenuModal } from "./modules/menuController.js";
 import { initializeCarouselMovies } from "./modules/carouselMovies.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const functionsToCall = [
-    { name: "animationCardHover", func: animationCardHover },
+    { name: "openMenuModal", func: openMenuModal },
+    { name: "closeMenuModal", func: closeMenuModal },
     { name: "initializeCarouselMovies", func: initializeCarouselMovies },
   ];
 

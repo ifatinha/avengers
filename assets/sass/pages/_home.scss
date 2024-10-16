@@ -4,13 +4,10 @@
 @use "../global/responsive"as *;
 
 .movies {
-    @include flex(center, end);
-    flex-direction: column;
-    height        : 100%;
-    padding       : 60px 2% 1rem;
-    position      : relative;
-    transition    : .5s ease-in-out;
-    width         : 100%;
+    height    : 100%;
+    position  : relative;
+    transition: .5s ease-in-out;
+    width     : 100%;
 
     &::before {
         @include bg-img("../images/home-bg.jpg");
@@ -22,116 +19,4 @@
         transition: opacity 1s ease-in-out, background-image .5s ease-in-out;
         width     : 100%;
     }
-
-    @include devices-small-screens {
-        //justify-content: flex-end;
-    }
-
-    &__cards {
-        @include flex(center, space-evenly);
-        overflow: auto;
-        position: relative;
-        width   : 100%;
-    }
-}
-
-.movie__card {
-    background : white;
-    display    : block;
-    flex-shrink: 1;
-    filter     : grayscale(100%);
-    height     : 70vh;
-    min-width  : 360px;
-    overflow   : hidden;
-    transition : .5s ease-in-out;
-    width      : 100%;
-}
-
-.card__content {
-    height  : 100%;
-    overflow: hidden;
-    position: relative;
-    width   : 100%;
-}
-
-.card__image {
-    height    : 100%;
-    object-fit: cover;
-    width     : 100%;
-}
-
-.card__title {
-    bottom        : 12px;
-    display       : block;
-    font-size     : get-font-size(24);
-    position      : absolute;
-    text-transform: uppercase;
-    text-align    : center;
-    transition    : .5s ease-in-out;
-    z-index       : 9999;
-    width         : 100%;
-
-    @include devices(m) {
-        font-size: get-font-size(18);
-    }
-}
-
-.movie__card--hovered {
-    filter   : none;
-    transform: translateY(-12px);
-
-    .card__title {
-        bottom: 50%;
-    }
-}
-
-.movies__button {
-    @include apply-color("pure-white");
-    background: transparent;
-    border    : none;
-    cursor    : pointer;
-    font-size : get-font-size(42);
-    transition: .5s ease-in-out;
-    position  : absolute;
-
-    @include hover() {
-        @include apply-color("red");
-        transform: scale(1.1);
-    }
-}
-
-#arrowLeft {
-    left: 1rem;
-    top : 50%;
-}
-
-#arrowRight {
-    right: 1rem;
-    top  : 50%;
-}
-
-// set background section
-
-.movies#avengers::before {
-    //@include bg-gradient("../images/the-avengers-bg.jpg", .8);
-    @include bg-img("../images/the-avengers-bg.jpg");
-    opacity: 0.4;
-}
-
-.movies#ageOfUltron::before {
-    // @include bg-gradient("../images/age-of-ultron-bg.jpg", .8);
-    @include bg-img("../images/age-of-ultron-bg.jpg");
-    opacity: 0.4;
-}
-
-.movies#infinityWar::before {
-    //@include bg-gradient("../images/infinity-war-bg.jpg", .8);
-    @include bg-img("../images/infinity-war-bg.jpg");
-    opacity: 0.4;
-}
-
-.movies#endgame::before {
-    //@include bg-gradient("../images/endgame-bg.jpg", .8);
-    @include bg-img("../images/endgame-bg.jpg");
-    opacity: 0.4;
 }

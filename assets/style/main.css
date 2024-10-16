@@ -109,6 +109,10 @@ a {
   display: flex;
   gap: 8px;
   justify-content: center;
+  color: #FFFFFF;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -116,30 +120,14 @@ a {
   min-width: 44px;
   transition: 0.5s ease-in-out;
 }
-@media screen and (min-width: 1920px) {
-  .burger__button {
-    display: none;
-  }
-}
-@media screen and (min-width: 1440px) and (max-width: calc(1920px - 1px)) {
-  .burger__button {
-    display: none;
-  }
-}
-@media screen and (min-width: 1024px) and (max-width: calc(1440px - 1px)) {
-  .burger__button {
-    display: none;
-  }
-}
 .burger__button:hover {
   opacity: 0.5;
 }
 .burger__button-visually {
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.125rem;
 }
 .burger__button-bars {
-  background-color: #000000;
+  background-color: #FFFFFF;
   display: block;
   height: 2px;
   position: relative;
@@ -175,7 +163,7 @@ a {
 
 .modal {
   color: #FFFFFF;
-  background: black;
+  background: rgb(206, 24, 49);
   height: 100%;
   inset: 0;
   overflow-y: auto;
@@ -185,30 +173,60 @@ a {
   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
   visibility: hidden;
   width: 100%;
-  z-index: 1000;
+  z-index: 9999;
 }
 .modal::-webkit-scrollbar {
   width: 0;
 }
-.modal__close-button {
+.modal__header {
   align-items: center;
   display: flex;
-  gap: 4px;
+  gap: 0;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.modal__close-button {
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  align-items: center;
+  display: flex;
+  gap: 10px;
   justify-content: center;
   color: #FFFFFF;
   background: transparent;
   border: transparent;
   cursor: pointer;
-  font-size: 0.875rem;
-  min-height: 42px;
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  z-index: 9999999;
+  font-size: 1.125rem;
+  min-height: 50px;
+  min-width: 44px;
+  position: relative;
+  transition: 0.5s ease-in-out;
 }
-.modal__close-button img {
-  height: 32px;
-  width: 32px;
+.modal__close-button:hover::after {
+  transform: rotate(225deg);
+}
+.modal__close-button:hover::before {
+  transform: rotate(135deg);
+}
+.modal__close-button::after, .modal__close-button::before {
+  background: currentColor;
+  content: "";
+  height: 2px;
+  position: absolute;
+  right: 2px;
+  transition: 0.6s ease-in-out;
+  width: 22px;
+}
+.modal__close-button::after {
+  transform: rotate(45deg);
+}
+.modal__close-button::after:hover {
+  transform: translate(-50%, -50%) rotate(225deg);
+}
+.modal__close-button::before {
+  transform: rotate(-45deg);
 }
 
 .modal__active {
@@ -219,59 +237,6 @@ a {
 
 .menu {
   width: 100%;
-}
-.menu ul {
-  align-items: center;
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.menu__item {
-  font-family: "Bebas Neue", sans-serif;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  display: inline-block;
-  font-size: 1.5rem;
-  letter-spacing: 2px;
-  line-height: 1.4;
-  padding: 0.7rem 1rem;
-  position: relative;
-  transition: 0.5s ease-in-out;
-  text-transform: uppercase;
-}
-.menu__item:hover {
-  transform: scale(1.1);
-}
-@media screen and (min-width: 768px) and (max-width: calc(1024px - 1px)) {
-  .menu__item {
-    font-size: 1rem;
-  }
-}
-@media screen and (max-width: calc(768px - 1px)) {
-  .menu__item {
-    font-size: 1rem;
-  }
-}
-@media screen and (max-width: 480px) {
-  .menu__item {
-    font-size: 1rem;
-  }
-}
-.menu__item img {
-  display: block;
-  height: 40px;
-  object-fit: cover;
-  width: 40px;
-}
-.menu__icon {
-  padding: 0.5rem 1rem;
-}
-@media screen and (max-width: calc(768px - 1px)) {
-  .menu__icon {
-    padding-top: 0.1rem;
-    padding-bottom: 0.1rem;
-  }
 }
 
 .container {
@@ -295,15 +260,27 @@ a {
 }
 
 .header {
+  font-family: "Roboto", sans-serif;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  position: absolute;
+  width: 100%;
+  z-index: 999;
+}
+.header__container {
   align-items: center;
   display: flex;
   gap: 1rem;
-  justify-content: center;
-  font-family: "Roboto", sans-serif;
-  padding: 1rem 2%;
-  position: absolute;
+  justify-content: space-between;
+}
+.header__brand {
+  height: 50px;
+  width: 50px;
+}
+.header__brand img {
+  height: 100%;
+  object-fit: cover;
   width: 100%;
-  z-index: 9999;
 }
 
 .main {
@@ -312,13 +289,7 @@ a {
 }
 
 .movies {
-  align-items: center;
-  display: flex;
-  gap: 1rem;
-  justify-content: end;
-  flex-direction: column;
   height: 100%;
-  padding: 60px 2% 1rem;
   position: relative;
   transition: 0.5s ease-in-out;
   width: 100%;
@@ -335,121 +306,6 @@ a {
   position: absolute;
   transition: opacity 1s ease-in-out, background-image 0.5s ease-in-out;
   width: 100%;
-}
-.movies__cards {
-  align-items: center;
-  display: flex;
-  gap: 1rem;
-  justify-content: space-evenly;
-  overflow: auto;
-  position: relative;
-  width: 100%;
-}
-
-.movie__card {
-  background: white;
-  display: block;
-  flex-shrink: 1;
-  filter: grayscale(100%);
-  height: 70vh;
-  min-width: 360px;
-  overflow: hidden;
-  transition: 0.5s ease-in-out;
-  width: 100%;
-}
-
-.card__content {
-  height: 100%;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-}
-
-.card__image {
-  height: 100%;
-  object-fit: cover;
-  width: 100%;
-}
-
-.card__title {
-  bottom: 12px;
-  display: block;
-  font-size: 1.5rem;
-  position: absolute;
-  text-transform: uppercase;
-  text-align: center;
-  transition: 0.5s ease-in-out;
-  z-index: 9999;
-  width: 100%;
-}
-@media screen and (max-width: calc(768px - 1px)) {
-  .card__title {
-    font-size: 1.125rem;
-  }
-}
-
-.movie__card--hovered {
-  filter: none;
-  transform: translateY(-12px);
-}
-.movie__card--hovered .card__title {
-  bottom: 50%;
-}
-
-.movies__button {
-  color: #FFFFFF;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  font-size: 2.625rem;
-  transition: 0.5s ease-in-out;
-  position: absolute;
-}
-.movies__button:hover {
-  color: #A50034;
-  transform: scale(1.1);
-}
-
-#arrowLeft {
-  left: 1rem;
-  top: 50%;
-}
-
-#arrowRight {
-  right: 1rem;
-  top: 50%;
-}
-
-.movies#avengers::before {
-  background: url("../images/the-avengers-bg.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 0.4;
-}
-
-.movies#ageOfUltron::before {
-  background: url("../images/age-of-ultron-bg.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 0.4;
-}
-
-.movies#infinityWar::before {
-  background: url("../images/infinity-war-bg.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 0.4;
-}
-
-.movies#endgame::before {
-  background: url("../images/endgame-bg.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  opacity: 0.4;
 }
 
 /*# sourceMappingURL=main.css.map */

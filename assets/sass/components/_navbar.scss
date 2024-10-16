@@ -5,45 +5,4 @@
 
 .menu {
     width: 100%;
-
-    ul {
-        @include flex(center, center);
-        flex-wrap: wrap;
-    }
-
-    &__item {
-        @include font-secondary();
-        display       : inline-block;
-        font-size     : get-font-size(24);
-        letter-spacing: 2px;
-        line-height   : 1.4;
-        padding       : .7rem 1rem;
-        position      : relative;
-        transition    : .5s ease-in-out;
-        text-transform: uppercase;
-
-        @include hover {
-            transform: scale(1.1);
-        }
-
-        @include devices-small-screens {
-            font-size: get-font-size(16);
-        }
-
-        img {
-            display   : block;
-            height    : 40px;
-            object-fit: cover;
-            width     : 40px;
-        }
-    }
-
-    &__icon {
-        padding: .5rem 1rem;
-
-        @include devices(m) {
-            padding-top   : .1rem;
-            padding-bottom: .1rem;
-        }
-    }
 }

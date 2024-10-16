@@ -5,6 +5,8 @@
 
 .burger__button {
     @include flex(center, center, 8px);
+    @include apply-color("pure-white");
+    @include font-secondary();
     background: transparent;
     border    : none;
     cursor    : pointer;
@@ -12,30 +14,16 @@
     min-width : 44px;
     transition: .5s ease-in-out;
 
-    @include devices-large-screens() {
-        display: none;
-    }
-
     @include hover {
         opacity: .5;
     }
 
     &-visually {
-        font-size  : get-font-size(16);
-        font-weight: 600;
-
-        // @include font-primary();
-        // clip     : rect(0, 0, 0, 0);
-        // font-size: get-font-size(14);
-        // height   : 1px;
-        // overflow : hidden;
-        // padding  : 0;
-        // position : absolute;
-        // width    : 1px;
+        font-size: get-font-size(18);
     }
 
     &-bars {
-        @include apply-bg-color("pure-black");
+        @include apply-bg-color("pure-white");
         display   : block;
         height    : 2px;
         position  : relative;

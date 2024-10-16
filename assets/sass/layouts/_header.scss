@@ -3,10 +3,25 @@
 @use "../base/mixins"as *;
 
 .header {
-    @include flex(center, center);
     @include font-primary();
-    padding : 1rem 2%;
-    position: absolute;
-    width   : 100%;
-    z-index : 9999;
+    padding-top   : .5rem;
+    padding-bottom: .5rem;
+    position      : absolute;
+    width         : 100%;
+    z-index       : 999;
+
+    &__container {
+        @include flex(center, space-between);
+    }
+
+    &__brand {
+        height: 50px;
+        width : 50px;
+
+        img {
+            height    : 100%;
+            object-fit: cover;
+            width     : 100%;
+        }
+    }
 }

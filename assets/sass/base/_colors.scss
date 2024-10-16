@@ -1,12 +1,12 @@
 @use "sass:map";
 
-$theme-colors  : (
-    "blue"     : #003DA5, // Azul (Capitão América)
-    "dark-gray": #424242, // Cinza Escuro (para textos e fundos)
-    "yellow"   : #FDD835, // Amarelo (detalhes dos trajes)
-    "pure-black": #000000, // Preto (para textos e fundos)
-    "pure-white"    : #FFFFFF, // Branco (para contraste e legibilidade)
-    "red"      : #A50034, // Vermelho (Homem de Ferro)
+$theme-colors    : (
+    "blue" : #003DA5, // Azul (Capitão América)
+    "dark-gray"  : #424242, // Cinza Escuro (para textos e fundos)
+    "yellow"     : #FDD835, // Amarelo (detalhes dos trajes)
+    "pure-black" : #000000, // Preto (para textos e fundos)
+    "pure-white" : #FFFFFF, // Branco (para contraste e legibilidade)
+    "red"        : #A50034, // Vermelho (Homem de Ferro)
 );
 
 @mixin apply-color($key) {

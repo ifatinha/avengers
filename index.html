@@ -53,15 +53,43 @@
 
 <body>
     <header class="header">
-        <div class="header__brande">
-            
+        <div class="container header__container">
+            <div class="header__brand">
+                <a href="index.html">
+                    <img src="assets/icons/avengers.png" alt="Avengers" height="50" width="50">
+                </a>
+            </div>
+            <button class="burger__button" type="button" id="menuOpenButton" aria-label="Abrir Menu"
+                aria-expanded="false" aria-haspopup="true" aria-controls="modalMenu">
+                <span class="burger__button-visually">Menu</span>
+                <span class="burger__button-bars" id="menuBar" aria-hidden="true"></span>
+            </button>
         </div>
     </header>
 
-    <main class="main">
+    <!-- modal menu -->
+    <div class="modal modal--menu" id="modalMenu" role="menu" aria-labelledby="menuOpenButton">
+        <div class="container">
+            <header class="modal__header">
+                <div class="header__brand">
+                    <a href="index.html">
+                        <img src="assets/icons/avengers.png" alt="Avengers" height="50" width="50">
+                    </a>
+                </div>
+                <button class="modal__close-button" id="menuModalCloseButton">
+                    <span>Fechar</span>
+                    <span class="modal__close-button-x"></span>
+                    <span class="modal__close-button-y"></span>
+                </button>
+            </header>
+        </div>
+    </div>
+
+    <!-- conteudo principal -->
+    <!-- <main class="main">
         <article class="movies">
         </article>
-    </main>
+    </main> -->
 
     <script src="https://kit.fontawesome.com/4980d49b51.js" crossorigin="anonymous"></script>
     <script type="module" src="assets/scripts/app.js"></script>
