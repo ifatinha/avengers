@@ -315,7 +315,7 @@ a {
   align-items: center;
   display: flex;
   gap: 1rem;
-  justify-content: center;
+  justify-content: end;
   flex-direction: column;
   height: 100%;
   padding: 60px 2% 1rem;
@@ -341,19 +341,21 @@ a {
   display: flex;
   gap: 1rem;
   justify-content: space-evenly;
+  overflow: auto;
   position: relative;
   width: 100%;
 }
 
 .movie__card {
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background: white;
   display: block;
-  flex: 1 1 25%;
+  flex-shrink: 1;
   filter: grayscale(100%);
-  height: 60vh;
+  height: 70vh;
+  min-width: 360px;
   overflow: hidden;
   transition: 0.5s ease-in-out;
+  width: 100%;
 }
 
 .card__content {
@@ -364,9 +366,9 @@ a {
 }
 
 .card__image {
-  border-radius: 0.5rem;
   height: 100%;
   object-fit: cover;
+  width: 100%;
 }
 
 .card__title {
