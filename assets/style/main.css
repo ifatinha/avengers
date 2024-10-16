@@ -261,8 +261,7 @@ a {
 
 .header {
   font-family: "Roboto", sans-serif;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem;
   position: absolute;
   width: 100%;
   z-index: 999;
@@ -310,6 +309,7 @@ a {
 
 .carousel__movies {
   height: 100%;
+  padding: 1rem;
   position: relative;
   width: 100%;
 }
@@ -323,18 +323,22 @@ a {
   inset: 0;
   margin-bottom: 1rem;
   opacity: 0;
+  padding: 1rem;
   position: absolute;
   transition: 1s ease-in-out;
   width: 100%;
   z-index: -1;
 }
 .movie__content {
-  background: orange;
-  max-width: 500px;
+  max-width: 580px;
   margin-bottom: 2rem;
-  min-height: 270px;
-  padding: 1% 2%;
+  padding: 1rem 0;
   width: 100%;
+}
+@media screen and (max-width: 700px) and (orientation: landscape) {
+  .movie__content {
+    margin-bottom: 0.5rem;
+  }
 }
 .movie__content span {
   display: block;
@@ -348,16 +352,22 @@ a {
   text-transform: uppercase;
   font-size: 6.25rem;
   line-height: 0.9;
+  margin-bottom: 0.5rem;
 }
 @media screen and (max-width: calc(768px - 1px)) {
   .movie__content h1 {
-    font-size: 5rem;
+    font-size: 4.375rem;
     line-height: 1;
   }
 }
 @media screen and (max-width: 480px) {
   .movie__content h1 {
-    font-size: 5rem;
+    font-size: 4.375rem;
+  }
+}
+@media screen and (max-width: 700px) and (orientation: landscape) {
+  .movie__content h1 {
+    font-size: 2.5rem;
   }
 }
 .movie__content a {
@@ -388,39 +398,125 @@ a {
   z-index: 1;
 }
 
-.carousel__dots {
+.carousel__button {
+  color: #FFFFFF;
   align-items: center;
   display: flex;
-  gap: 8px;
+  gap: 5px;
   justify-content: start;
-  bottom: 5%;
-  margin-top: 3rem;
-  position: absolute;
-  right: 15%;
-  z-index: 1;
-}
-.carousel__dots .button-dot {
   border: none;
+  background: transparent;
   cursor: pointer;
-}
-
-.dot--activated {
-  background-color: #C1272D;
-}
-
-.carousel__button {
+  font-size: 1.125rem;
+  text-transform: lowercase;
+  padding: 4px 20px;
   position: absolute;
-  z-index: 2;
+  z-index: 9999;
 }
-
-#prev {
-  bottom: 5%;
-  left: 15%;
+.carousel__button:hover::before {
+  width: 100%;
+}
+.carousel__button::before {
+  background-color: #C1272D;
+  bottom: 0;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  transition: 0.5s ease-in-out;
+  width: 50%;
+  z-index: -1;
+}
+.carousel__button span {
+  display: inline-block;
+  font-size: 1.75rem;
+  margin-bottom: 6px;
+  vertical-align: middle;
 }
 
 #next {
-  right: 15%;
+  right: 112px;
   top: 20%;
+}
+@media screen and (min-width: 768px) and (max-width: calc(1024px - 1px)) {
+  #next {
+    right: 1rem;
+    top: 14%;
+  }
+}
+@media screen and (max-width: calc(768px - 1px)) {
+  #next {
+    right: 1rem;
+    top: 14%;
+  }
+}
+@media screen and (max-width: 480px) {
+  #next {
+    right: 1rem;
+    top: 14%;
+  }
+}
+@media screen and (max-width: 700px) and (orientation: landscape) {
+  #next {
+    top: 20%;
+  }
+}
+
+#prev {
+  bottom: 10%;
+  left: 112px;
+}
+@media screen and (min-width: 768px) and (max-width: calc(1024px - 1px)) {
+  #prev {
+    left: 1rem;
+  }
+}
+@media screen and (max-width: calc(768px - 1px)) {
+  #prev {
+    left: 1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  #prev {
+    left: 1rem;
+  }
+}
+
+.carousel__dots {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: start;
+  bottom: 10%;
+  margin-top: 3rem;
+  position: absolute;
+  right: 112px;
+  z-index: 1;
+}
+@media screen and (min-width: 768px) and (max-width: calc(1024px - 1px)) {
+  .carousel__dots {
+    right: 1rem;
+  }
+}
+@media screen and (max-width: calc(768px - 1px)) {
+  .carousel__dots {
+    right: 1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .carousel__dots {
+    right: 1rem;
+  }
+}
+.carousel__dots .dot {
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 1.375rem;
+}
+
+.dot--activated {
+  color: #C1272D;
 }
 
 #theAvengers {

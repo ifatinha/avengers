@@ -4,11 +4,10 @@
 
 .header {
     @include font-primary();
-    padding-top   : 1rem;
-    padding-bottom: 1rem;
-    position      : absolute;
-    width         : 100%;
-    z-index       : 999;
+    padding : 1rem;
+    position: absolute;
+    width   : 100%;
+    z-index : 999;
 
     &__container {
         @include flex(center, space-between);

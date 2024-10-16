@@ -5,6 +5,7 @@
 
 .carousel__movies {
     height  : 100%;
+    padding : 1rem;
     position: relative;
     width   : 100%;
 }
@@ -15,18 +16,21 @@
     inset        : 0;
     margin-bottom: 1rem;
     opacity      : 0;
+    padding      : 1rem;
     position     : absolute;
     transition   : 1s ease-in-out;
     width        : 100%;
     z-index      : -1;
 
     &__content {
-        background   : orange;
-        max-width    : 500px;
+        max-width    : 580px;
         margin-bottom: 2rem;
-        min-height   : 270px;
-        padding      : 1% 2%;
+        padding      : 1rem 0;
         width        : 100%;
+
+        @include mobile-landscape {
+            margin-bottom: .5rem;
+        }
 
         span {
             display       : block;
@@ -37,16 +41,21 @@
 
         h1 {
             @include font-secondary();
-            font-size  : get-font-size(100);
-            line-height: .9;
+            font-size    : get-font-size(100);
+            line-height  : .9;
+            margin-bottom: .5rem;
 
             @include devices(m) {
-                font-size  : get-font-size(80);
+                font-size  : get-font-size(70);
                 line-height: 1;
             }
 
             @include devices(xs) {
-                font-size: get-font-size(80);
+                font-size: get-font-size(70);
+            }
+
+            @include mobile-landscape {
+                font-size: get-font-size(40);
             }
         }
 
@@ -84,50 +93,105 @@
     z-index: 1;
 }
 
+.carousel__button {
+    @include apply-color("pure-white");
+    @include flex(center, start, 5px);
+    border        : none;
+    background    : transparent;
+    cursor        : pointer;
+    font-size     : get-font-size(18);
+    text-transform: lowercase;
+    padding       : 4px 20px;
+    position      : absolute;
+    z-index       : 9999;
+
+    @include hover {
+        &::before {
+            width: 100%;
+        }
+    }
+
+    &::before {
+        @include apply-bg-color("red");
+        bottom    : 0;
+        content   : "";
+        height    : 100%;
+        left      : 0;
+        position  : absolute;
+        transition: .5s ease-in-out;
+        width     : 50%;
+        z-index   : -1;
+    }
+
+    span {
+        display       : inline-block;
+        font-size     : get-font-size(28);
+        margin-bottom : 6px;
+        vertical-align: middle;
+    }
+
+}
+
+#next {
+    right: 112px;
+    top  : 20%;
+
+    @include devices-small-screens {
+        right: 1rem;
+        top  : 14%;
+    }
+
+    @include mobile-landscape {
+        top: 20%;
+    }
+
+}
+
+#prev {
+    bottom: 10%;
+    left  : 112px;
+
+    @include devices-small-screens {
+        left: 1rem;
+    }
+}
+
 .carousel__dots {
-    @include flex(center, start, 8px);
-    bottom    : 5%;
+    @include flex(center, start, 1rem);
+    bottom    : 10%;
     margin-top: 3rem;
     position  : absolute;
-    right     : 15%;
+    right     : 112px;
     z-index   : 1;
 
-    @include devices(t) {
-        
+    @include devices-small-screens {
+        right: 1rem;
     }
 
-    @include devices(m) {
-        
-    }
-
-    @include devices(xs) {
-        
-    }
-
-    .button-dot {
-        border       : none;
-        cursor       : pointer;
+    .dot {
+        @include font-secondary();
+        font-size: get-font-size(22);
     }
 }
 
 .dot--activated {
-    @include apply-bg-color("red");
+    @include apply-color("red");
 }
 
-.carousel__button {
-    position: absolute;
-    z-index : 2;
-}
+// .carousel__button {
+//     position: absolute;
+//     z-index : 2;
+// }
 
-#prev {
-    bottom: 5%;
-    left  : 15%;
-}
+// #prev {
+//     bottom: 5%;
+//     left  : 15%;
+// }
 
-#next {
-    right: 15%;
-    top  : 20%;
-}
+// #next {
+//     right: 15%;
+//     top  : 20%;
+// }
 
 #theAvengers {
     @include bg-gradient("../images/the-avengers-bg.jpg", .8);
