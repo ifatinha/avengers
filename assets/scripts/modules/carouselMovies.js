@@ -67,7 +67,7 @@ const showCarousel = (
 
 export const initializeCarouselMovies = () => {
   const carouselCount = document.querySelectorAll(".dot");
-  const carouselItems = document.querySelectorAll(".movie");
+  const carouselItems = document.querySelectorAll(".carousel__movie");
   const carouselButtons = document.querySelectorAll(".carousel__button");
 
   if (

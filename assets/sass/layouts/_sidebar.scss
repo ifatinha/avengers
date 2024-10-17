@@ -1,0 +1,78 @@
+@use "../base/colors"as *;
+@use "../base/typography"as *;
+@use "../base/mixins"as *;
+
+#sidebarOpenButton {
+    position: absolute;
+    left    : 2rem;
+    top     : 1rem;
+}
+
+.sidebar {
+    @include flex(center, start);
+    @include apply-bg-color("pure-black");
+    background    : rgba(0, 0, 0, 0.6);
+    //filter     : blur(5px);
+    flex-direction: column;
+    height        : 100%;
+    padding-top   : 1rem;
+    position      : fixed;
+    transform     : translateX(-400px);
+    transition    : transform .7s cubic-bezier(.645, .045, .355, 1),
+        -webkit-transform .7s cubic-bezier(.645, .045, .355, 1);
+    width  : 160px;
+    z-index: 999;
+
+    &__list {
+        margin-top: 3rem;
+        width     : 100%;
+
+        li {
+            margin-bottom: .5rem;
+            width        : 100%;
+
+            a {
+                @include font-secondary();
+                @include flex(center, center, 0);
+                font-size : get-font-size(20);
+                display   : inline-block;
+                padding   : 12px 16px;
+                position  : relative;
+                transition: .5s ease-in-out;
+                text-align: center;
+                width     : 100%;
+
+                @include hover() {
+                    @include apply-color("red");
+
+                    &::before {
+                        width: 42%;
+                    }
+                }
+
+                &::before {
+                    @include apply-bg-color("red");
+                    content   : "";
+                    height    : 2px;
+                    position  : absolute;
+                    right     : -28px;
+                    top       : 50%;
+                    transition: .5s ease-in-out;
+                    width     : 0%;
+                }
+            }
+        }
+    }
+}
+
+.sidebar__link-activated {
+    @include apply-color("red");
+
+    &::before {
+        width: 42% !important;
+    }
+}
+
+.sidebar--activated {
+    transform: translateZ(0) !important;
+}

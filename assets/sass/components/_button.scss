@@ -16,6 +16,18 @@
 
     @include hover {
         opacity: .5;
+
+        .burger__button-bars {
+            background: transparent !important;
+
+            &::before {
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                transform: rotate(-45deg);
+            }
+        }
     }
 
     &-visually {
@@ -64,5 +76,52 @@
         &::after {
             transform: rotate(-45deg);
         }
+    }
+}
+
+.close__button {
+    @include font-secondary();
+    @include flex(center, center, 10px);
+    @include apply-color("pure-white");
+    background: transparent;
+    border    : transparent;
+    cursor    : pointer;
+    font-size : get-font-size(18);
+    min-height: 50px;
+    min-width : 44px;
+    position  : relative;
+    transition: .5s ease-in-out;
+
+    @include hover {
+        &::after {
+            transform: rotate(225deg);
+        }
+
+        &::before {
+            transform: rotate(135deg);
+        }
+    }
+
+    &::after,
+    &::before {
+        background: currentColor;
+        content   : "";
+        height    : 2px;
+        position  : absolute;
+        right     : 2px;
+        transition: .6s ease-in-out;
+        width     : 22px;
+    }
+
+    &::after {
+        transform: rotate(45deg);
+
+        @include hover {
+            transform: translate(-50%, -50%) rotate(225deg);
+        }
+    }
+
+    &::before {
+        transform: rotate(-45deg);
     }
 }

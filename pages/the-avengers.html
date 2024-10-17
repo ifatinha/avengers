@@ -52,75 +52,39 @@
 </head>
 
 <body>
-  
-  <header class="header page-content">
-    <div class="container header__container">
-      <div class="header__brand">
-        <a href="/index.html">
-          <img src="../assets/icons/avengers.png" alt="Avengers" height="50" width="50">
-        </a>
-      </div>
-      <button class="burger__button" type="button" id="menuOpenButton" aria-label="Abrir Menu" aria-expanded="false"
-        aria-haspopup="true" aria-controls="modalMenu">
-        <span class="burger__button-visually">Menu</span>
-        <span class="burger__button-bars" id="menuBar" aria-hidden="true"></span>
-      </button>
-    </div>
-  </header>
 
-  <!-- modal menu -->
-  <div class="modal modal--menu" id="modalMenu" role="menu" aria-labelledby="menuOpenButton" aria-hidden="true"
-    aria-label="Menu de navegação">
+  <button class="burger__button" type="button" id="sidebarOpenButton" aria-label="Abrir Menu" aria-expanded="false"
+    aria-haspopup="true" aria-controls="sidebar">
+    <span class="burger__button-bars" id="menuBar" aria-hidden="true"></span>
+    <span class="burger__button-visually">Menu</span>
+  </button>
 
-    <header>
-      <div class="container modal__header">
-        <div class="header__brand">
-          <a href="/index.html">
-            <img src="../assets/icons/avengers.png" alt="Avengers" height="50" width="50">
-          </a>
-        </div>
-        <button class="modal__close-button" id="menuModalCloseButton">
-          <span>Fechar</span>
-          <span class="modal__close-button-x"></span>
-          <span class="modal__close-button-y"></span>
-        </button>
-      </div>
-    </header>
-
-    <nav class="navbar">
-      <div class="container">
-        <ul class="navbar__list">
-          <li>
-            <span>01</span>
-            <a href="the-avengers.html">
-              The Avengers
-            </a>
-          </li>
-          <li>
-            <span>02</span>
-            <a href="age-of-ultron.html">
-              Age of Ultron
-            </a>
-          </li>
-          <li>
-            <span>03</span>
-            <a href="infinity-war.html">
-              Infinity War
-            </a>
-          </li>
-          <li>
-            <span>04</span>
-            <a href="endgame.html">
-              Endgame
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
+  <div class="sidebar">
+    <button class="close__button" id="sidebarCloseButton">
+      <span>Fechar</span>
+      <span class="close__button-x"></span>
+      <span class="close__button-y"></span>
+    </button>
+    <ul class="sidebar__list">
+      <li>
+        <a href="/index.html" class="sidebar__link-activated">Inicio</a>
+      </li>
+      <li>
+        <a href="#cast">Elenco</a>
+      </li>
+      <li>
+        <a href="#videos">Videos</a>
+      </li>
+      <li>
+        <a href="#gallery">Galeria</a>
+      </li>
+      <li>
+        <a href="#news">Notícias</a>
+      </li>
+    </ul>
   </div>
 
-  <main>
+  <main class="page-content">
 
   </main>
 
