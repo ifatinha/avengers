@@ -163,7 +163,7 @@ a {
 
 .modal {
   color: #FFFFFF;
-  background: rgb(206, 24, 49);
+  background: rgba(206, 24, 49, 0.97);
   height: 100%;
   inset: 0;
   overflow-y: auto;
@@ -235,7 +235,33 @@ a {
   visibility: visible;
 }
 
-.menu {
+.navbar {
+  padding: 2rem 2% 1rem;
+  width: 100%;
+}
+.navbar__list li {
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.navbar__list li span {
+  display: block;
+  font-size: 1.75rem;
+}
+.navbar__list li a {
+  font-size: 3.125rem;
+  position: relative;
+}
+.navbar__list li a::after {
+  background: rgba(0, 0, 0, 0.4);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  transition: 0.5s ease-in-out;
+  width: 50%;
+}
+.navbar__list li a:hover::after {
   width: 100%;
 }
 

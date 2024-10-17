@@ -4,7 +4,7 @@
 
 .modal {
     @include apply-color("pure-white");
-    background: rgb(206, 24, 49);
+    background: rgba(206, 24, 49, .97);
     height    : 100%;
     inset     : 0;
     overflow-y: auto;

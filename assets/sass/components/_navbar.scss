@@ -3,6 +3,40 @@
 @use "../base/typography"as *;
 @use "../global/responsive"as *;
 
-.menu {
-    width: 100%;
+.navbar {
+    padding: 2rem 2% 1rem;
+    width  : 100%;
+
+    &__list {
+
+        li {
+            @include font-secondary();
+
+            span {
+                display  : block;
+                font-size: get-font-size(28);
+            }
+
+            a {
+                font-size: get-font-size(50);
+                position : relative;
+
+                &::after {
+                    background: rgba($color: #000000, $alpha: .4);
+                    content   : "";
+                    height    : 100%;
+                    left      : 0;
+                    position  : absolute;
+                    transition: .5s ease-in-out;
+                    width     : 50%;
+                }
+
+                @include hover() {
+                    &::after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
 }
