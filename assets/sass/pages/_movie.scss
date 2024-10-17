@@ -2,6 +2,7 @@
 @use "../base/typography"as *;
 @use "../base/mixins"as *;
 @use "../global/responsive"as *;
+@use "../global/animations"as *;
 
 .carousel__movies {
     height  : 100%;
@@ -31,58 +32,58 @@
         @include mobile-landscape {
             margin-bottom: .5rem;
         }
+    }
 
-        span {
-            display       : block;
-            font-weight   : 500;
-            letter-spacing: 4px;
-            margin-bottom : .5rem;
+    &__year {
+        display       : block;
+        font-weight   : 500;
+        letter-spacing: 4px;
+        margin-bottom : .5rem;
+    }
+
+    &__title {
+        @include font-secondary();
+        font-size    : get-font-size(100);
+        line-height  : .9;
+        margin-bottom: .5rem;
+
+        @include devices(m) {
+            font-size  : get-font-size(70);
+            line-height: 1;
         }
 
-        h1 {
-            @include font-secondary();
-            font-size    : get-font-size(100);
-            line-height  : .9;
-            margin-bottom: .5rem;
-
-            @include devices(m) {
-                font-size  : get-font-size(70);
-                line-height: 1;
-            }
-
-            @include devices(xs) {
-                font-size: get-font-size(70);
-            }
-
-            @include mobile-landscape {
-                font-size: get-font-size(40);
-            }
+        @include devices(xs) {
+            font-size: get-font-size(70);
         }
 
-        a {
-            display       : inline-block;
-            font-weight   : 500;
-            letter-spacing: 1px;
-            padding       : 12px 0;
-            position      : relative;
-            text-transform: uppercase;
-            transition    : .3s ease-in-out;
+        @include mobile-landscape {
+            font-size: get-font-size(40);
+        }
+    }
 
+    &__link {
+        display       : inline-block;
+        font-weight   : 500;
+        letter-spacing: 1px;
+        padding       : 12px 0;
+        position      : relative;
+        text-transform: uppercase;
+        transition    : .3s ease-in-out;
+
+        &::after {
+            @include apply-bg-color("red");
+            bottom    : 0;
+            content   : "";
+            display   : block;
+            height    : 2px;
+            position  : absolute;
+            transition: .3s ease-in-out;
+            width     : 30%;
+        }
+
+        @include hover {
             &::after {
-                @include apply-bg-color("red");
-                bottom    : 0;
-                content   : "";
-                display   : block;
-                height    : 2px;
-                position  : absolute;
-                transition: .3s ease-in-out;
-                width     : 30%;
-            }
-
-            @include hover {
-                &::after {
-                    width: 100%;
-                }
+                width: 100%;
             }
         }
     }
@@ -91,6 +92,18 @@
 .movie--activated {
     opacity: 1;
     z-index: 1;
+
+    .movie__year {
+        @include fadeInUp(1s, 0s);
+    }
+
+    .movie__title {
+        @include fadeInUp(1.5s, 0.5s);
+    }
+
+    .movie__link {
+        @include fadeInUp(2s, 1s);
+    }
 }
 
 .carousel__button {

@@ -1,2 +1,19 @@
 // Definições de animações e transições que são usadas em várias partes do projeto.
+@keyframes fadeInUp {
+    0% {
+        opacity  : 0;
+        transform: translateY(30px);
+    }
 
+    100% {
+        opacity  : 1;
+        transform: translateY(0);
+    }
+}
+
+@mixin fadeInUp($duration, $delay) {
+    opacity        : 0;
+    transform      : translateY(30px);
+    animation      : fadeInUp $duration ease-out forwards;
+    animation-delay: $delay;
+}
