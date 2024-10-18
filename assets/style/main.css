@@ -227,19 +227,74 @@ a {
 }
 
 .button {
+  border: 2px solid transparent;
   font-size: 0.875rem;
   font-weight: 500;
-  padding: 12px 18px;
+  padding: 0.8rem 1.8rem;
   text-transform: uppercase;
   transition: 0.5s ease-in-out;
 }
 
 .button-red {
-  background-color: #C1272D;
-  color: #000000;
+  border-color: #C1272D;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 .button-red:hover {
-  background: #A02025;
+  color: #000000;
+}
+.button-red:hover::before {
+  width: 110%;
+}
+.button-red::before {
+  background-color: #C1272D;
+  content: "";
+  display: block;
+  height: 300%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%) rotate(45deg);
+  top: 50%;
+  transition: 0.5s ease-in-out;
+  width: 0%;
+  z-index: -1;
+}
+
+.carousel__button {
+  color: #FFFFFF;
+  align-items: center;
+  display: flex;
+  gap: 5px;
+  justify-content: start;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.125rem;
+  text-transform: lowercase;
+  padding: 4px 20px;
+  position: absolute;
+  z-index: 99;
+}
+.carousel__button:hover::before {
+  width: 100%;
+}
+.carousel__button::before {
+  background-color: #C1272D;
+  bottom: 0;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  transition: 0.5s ease-in-out;
+  width: 50%;
+  z-index: -1;
+}
+.carousel__button span {
+  display: inline-block;
+  font-size: 1.75rem;
+  margin-bottom: 6px;
+  vertical-align: middle;
 }
 
 .modal {
@@ -658,42 +713,6 @@ a {
   transform: translateY(30px);
   animation: fadeInUp 2s ease-out forwards;
   animation-delay: 1s;
-}
-
-.carousel__button {
-  color: #FFFFFF;
-  align-items: center;
-  display: flex;
-  gap: 5px;
-  justify-content: start;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  font-size: 1.125rem;
-  text-transform: lowercase;
-  padding: 4px 20px;
-  position: absolute;
-  z-index: 99;
-}
-.carousel__button:hover::before {
-  width: 100%;
-}
-.carousel__button::before {
-  background-color: #C1272D;
-  bottom: 0;
-  content: "";
-  height: 100%;
-  left: 0;
-  position: absolute;
-  transition: 0.5s ease-in-out;
-  width: 50%;
-  z-index: -1;
-}
-.carousel__button span {
-  display: inline-block;
-  font-size: 1.75rem;
-  margin-bottom: 6px;
-  vertical-align: middle;
 }
 
 #next {

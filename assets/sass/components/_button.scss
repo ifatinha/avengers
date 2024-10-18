@@ -129,18 +129,78 @@
 }
 
 .button {
+    border        : 2px solid transparent;
     font-size     : get-font-size(14);
     font-weight   : 500;
-    padding       : 12px 18px;
+    padding       : 0.8rem 1.8rem;
     text-transform: uppercase;
     transition    : .5s ease-in-out;
 }
 
 .button-red {
-    @include apply-bg-color("red");
-    @include apply-color("pure-black");
+    border-color: get-color("red");
+    overflow    : hidden;
+    position    : relative;
+    z-index     : 1;
 
     @include hover {
-        background: #A02025;
+        color: get-color("pure-black");
+
+        &::before {
+            width: 110%;
+        }
     }
+
+    &::before {
+        @include apply-bg-color("red");
+        content   : "";
+        display   : block;
+        height    : 300%;
+        left      : 50%;
+        position  : absolute;
+        transform : translate(-50%, -50%) rotate(45deg);
+        top       : 50%;
+        transition: .5s ease-in-out;
+        width     : 0%;
+        z-index   : -1;
+    }
+}
+
+.carousel__button {
+    @include apply-color("pure-white");
+    @include flex(center, start, 5px);
+    border        : none;
+    background    : transparent;
+    cursor        : pointer;
+    font-size     : get-font-size(18);
+    text-transform: lowercase;
+    padding       : 4px 20px;
+    position      : absolute;
+    z-index       : 99;
+
+    @include hover {
+        &::before {
+            width: 100%;
+        }
+    }
+
+    &::before {
+        @include apply-bg-color("red");
+        bottom    : 0;
+        content   : "";
+        height    : 100%;
+        left      : 0;
+        position  : absolute;
+        transition: .5s ease-in-out;
+        width     : 50%;
+        z-index   : -1;
+    }
+
+    span {
+        display       : inline-block;
+        font-size     : get-font-size(28);
+        margin-bottom : 6px;
+        vertical-align: middle;
+    }
+
 }

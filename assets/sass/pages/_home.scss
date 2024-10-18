@@ -124,45 +124,6 @@
     }
 }
 
-.carousel__button {
-    @include apply-color("pure-white");
-    @include flex(center, start, 5px);
-    border        : none;
-    background    : transparent;
-    cursor        : pointer;
-    font-size     : get-font-size(18);
-    text-transform: lowercase;
-    padding       : 4px 20px;
-    position      : absolute;
-    z-index       : 99;
-
-    @include hover {
-        &::before {
-            width: 100%;
-        }
-    }
-
-    &::before {
-        @include apply-bg-color("red");
-        bottom    : 0;
-        content   : "";
-        height    : 100%;
-        left      : 0;
-        position  : absolute;
-        transition: .5s ease-in-out;
-        width     : 50%;
-        z-index   : -1;
-    }
-
-    span {
-        display       : inline-block;
-        font-size     : get-font-size(28);
-        margin-bottom : 6px;
-        vertical-align: middle;
-    }
-
-}
-
 #next {
     right: 112px;
     top  : 20%;
