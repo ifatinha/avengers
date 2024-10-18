@@ -3,3 +3,84 @@
 @use "../base/mixins"as *;
 @use "../global/responsive"as *;
 @use "../global/animations"as *;
+
+.section {
+    @include flex(center, center);
+    background-attachment: fixed;
+    min-height           : 100%;
+    width                : 100%;
+
+    &__content {
+        max-width: 550px;
+        padding  : 1rem;
+        width    : 100%;
+
+        span {
+            @include apply-color("silver");
+            display      : block;
+            font-style   : italic;
+            font-weight  : 500;
+            margin-bottom: .5rem;
+        }
+
+        h1 {
+            @include font-secondary();
+            font-size  : get-font-size(100);
+            line-height: 1;
+
+            @include devices(m) {
+                font-size: get-font-size(50);
+            }
+
+            @include devices(xs) {
+                font-size: get-font-size(50);
+            }
+        }
+
+        p {
+            font-size    : get-font-size(14);
+            line-height  : 1.8;
+            margin-bottom: 1rem;
+        }
+
+        a {
+            @include font-secondary();
+            display   : inline-block;
+            font-size : get-font-size(24);
+            padding   : 12px 18px 12px 0;
+            position  : relative;
+            transition: .5s ease-in-out;
+
+            @include hover {
+                @include apply-color("red");
+            }
+
+            &::before {
+                @include apply-bg-color("red");
+                content   : "";
+                height    : 2px;
+                position  : absolute;
+                right     : -30px;
+                top       : 50%;
+                transition: .5s ease-in-out;
+                width     : 30%;
+            }
+        }
+    }
+}
+
+#movie1 {
+    @include bg-gradient("../images/the-avengers-home-bg.jpg", .9);
+}
+
+#movie2 {
+    @include bg-gradient("../images/age-of-ultron-home-bg.jpg", .9);
+}
+
+#movie3 {
+    @include bg-gradient("../images/infinity-war-home-bg.jpg", .9);
+}
+
+#movie4 {
+    @include bg-gradient("../images/endgame-home-bg.jpg", .9);
+}

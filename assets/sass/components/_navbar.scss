@@ -11,6 +11,7 @@
 
         li {
             @include font-secondary();
+            margin-bottom: 1rem;
 
             span {
                 display  : block;
@@ -28,7 +29,7 @@
                     left      : 0;
                     position  : absolute;
                     transition: .5s ease-in-out;
-                    width     : 50%;
+                    width     : 0%;
                 }
 
                 @include hover() {

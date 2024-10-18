@@ -1,51 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<head>
+    <!-- Meta tags essenciais -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Meta title -->
+    <title>Os Vingadores: Guerra Infinita (2018) - O Confronto contra Thanos</title>
+
+    <!-- Meta description -->
+    <meta name="description"
+        content="Em 'Os Vingadores: Guerra Infinita' (2018), os heróis da Marvel se unem para enfrentar Thanos, o Titã Louco, em uma batalha épica pelo destino do universo.">
+
+    <!-- Meta keywords -->
+    <meta name="keywords"
+        content="Vingadores, Guerra Infinita, Avengers, Thanos, Marvel, Joias do Infinito, Homem de Ferro, Capitão América, Thor, Hulk, 2018, filme de super-heróis">
+
+    <!-- Meta author -->
+    <meta name="author" content="Fatima Ferreira">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.seusite.com/vingadores-guerra-infinita">
+    <meta property="og:title" content="Os Vingadores: Guerra Infinita (2018) - O Confronto contra Thanos">
+    <meta property="og:description"
+        content="Os Vingadores e seus aliados devem sacrificar tudo para tentar impedir Thanos de coletar todas as Joias do Infinito e dizimar metade da vida no universo.">
+    <meta property="og:image" content="https://www.seusite.com/imagens/vingadores-guerra-infinita-poster.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.seusite.com/vingadores-guerra-infinita">
+    <meta property="twitter:title" content="Os Vingadores: Guerra Infinita (2018) - O Confronto contra Thanos">
+    <meta property="twitter:description"
+        content="Os Vingadores e seus aliados devem sacrificar tudo para tentar impedir Thanos de coletar todas as Joias do Infinito e dizimar metade da vida no universo.">
+    <meta property="twitter:image" content="https://www.seusite.com/imagens/vingadores-guerra-infinita-poster.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/icons/avengers.png" type="image/x-icon">
+
+    <!-- Font principal do projeto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="../assets/style/main.css">
+</head>
+
 <body>
+    <button class="burger__button" type="button" id="sidebarOpenButton" aria-label="Abrir Menu" aria-expanded="false"
+        aria-haspopup="true" aria-controls="sidebar">
+        <span class="burger__button-bars" id="burgerBars" aria-hidden="true"></span>
+        <span class="burger__button-visually">Menu</span>
+    </button>
 
-    <head>
-        <!-- Meta tags essenciais -->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <div class="sidebar" id="sidebar" aria-hidden="true">
+        <button class="close__button" id="sidebarCloseButton" aria-label="Fechar Menu">
+            <span aria-hidden="true">Fechar</span>
+            <span class="close__button-x"></span>
+            <span class="close__button-y"></span>
+        </button>
+        <ul class="sidebar__list">
+            <li>
+                <a href="/index.html" class="sidebar__link-activated">Inicio</a>
+            </li>
+            <li>
+                <a href="#cast">Elenco</a>
+            </li>
+            <li>
+                <a href="#videos">Videos</a>
+            </li>
+            <li>
+                <a href="#gallery">Galeria</a>
+            </li>
+            <li>
+                <a href="#news">Notícias</a>
+            </li>
+        </ul>
+    </div>
 
-        <!-- Meta title -->
-        <title>Os Vingadores: Guerra Infinita (2018) - O Confronto contra Thanos</title>
+    <main class="main page-content">
+        <section class="section" id="movie3">
+            <div class="container">
+                <div class="section__content">
+                    <span>A batalha pela sobrevivência do universo começa agora.</span>
+                    <h1>Vingadores: Guerra Infinita</h1>
+                    <a href="#">Ver Trailer</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
-        <!-- Meta description -->
-        <meta name="description"
-            content="Em 'Os Vingadores: Guerra Infinita' (2018), os heróis da Marvel se unem para enfrentar Thanos, o Titã Louco, em uma batalha épica pelo destino do universo.">
-
-        <!-- Meta keywords -->
-        <meta name="keywords"
-            content="Vingadores, Guerra Infinita, Avengers, Thanos, Marvel, Joias do Infinito, Homem de Ferro, Capitão América, Thor, Hulk, 2018, filme de super-heróis">
-
-        <!-- Meta author -->
-        <meta name="author" content="Fatima Ferreira">
-
-        <!-- Open Graph / Facebook -->
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="https://www.seusite.com/vingadores-guerra-infinita">
-        <meta property="og:title" content="Os Vingadores: Guerra Infinita (2018) - O Confronto contra Thanos">
-        <meta property="og:description"
-            content="Os Vingadores e seus aliados devem sacrificar tudo para tentar impedir Thanos de coletar todas as Joias do Infinito e dizimar metade da vida no universo.">
-        <meta property="og:image" content="https://www.seusite.com/imagens/vingadores-guerra-infinita-poster.jpg">
-
-        <!-- Twitter -->
-        <meta property="twitter:card" content="summary_large_image">
-        <meta property="twitter:url" content="https://www.seusite.com/vingadores-guerra-infinita">
-        <meta property="twitter:title" content="Os Vingadores: Guerra Infinita (2018) - O Confronto contra Thanos">
-        <meta property="twitter:description"
-            content="Os Vingadores e seus aliados devem sacrificar tudo para tentar impedir Thanos de coletar todas as Joias do Infinito e dizimar metade da vida no universo.">
-        <meta property="twitter:image" content="https://www.seusite.com/imagens/vingadores-guerra-infinita-poster.jpg">
-
-        <!-- Favicon -->
-        <link rel="icon" href="../assets/icons/avengers.png" type="image/x-icon">
-
-        <!-- Estilos CSS -->
-        <link rel="stylesheet" href="../assets/style/main.css">
-    </head>
-
+    <script src="https://kit.fontawesome.com/4980d49b51.js" crossorigin="anonymous"></script>
+    <script type="module" src="../assets/scripts/app.js"></script>
 </body>
 
 </html>

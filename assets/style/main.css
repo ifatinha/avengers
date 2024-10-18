@@ -188,6 +188,9 @@ a {
   position: relative;
   transition: 0.5s ease-in-out;
 }
+.close__button:hover {
+  opacity: 0.5;
+}
 .close__button:hover::after {
   transform: rotate(225deg);
 }
@@ -253,6 +256,7 @@ a {
   font-family: "Bebas Neue", sans-serif;
   letter-spacing: 1px;
   text-transform: uppercase;
+  margin-bottom: 1rem;
 }
 .navbar__list li span {
   display: block;
@@ -269,7 +273,7 @@ a {
   left: 0;
   position: absolute;
   transition: 0.5s ease-in-out;
-  width: 50%;
+  width: 0%;
 }
 .navbar__list li a:hover::after {
   width: 100%;
@@ -325,8 +329,12 @@ a {
 
 #sidebarOpenButton {
   position: absolute;
-  left: 2rem;
-  top: 1rem;
+  left: 3rem;
+  top: 2rem;
+}
+
+#sidebarCloseButton {
+  padding-top: 2rem;
 }
 
 .sidebar {
@@ -335,15 +343,19 @@ a {
   gap: 1rem;
   justify-content: start;
   background-color: #000000;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgb(0, 0, 0);
   flex-direction: column;
   height: 100%;
+  overflow-y: auto;
   padding-top: 1rem;
   position: fixed;
   transform: translateX(-400px);
   transition: transform 0.7s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
-  width: 160px;
+  width: 200px;
   z-index: 999;
+}
+.sidebar::-webkit-scrollbar {
+  width: 0;
 }
 .sidebar__list {
   margin-top: 3rem;
@@ -361,8 +373,8 @@ a {
   display: flex;
   gap: 0;
   justify-content: center;
-  font-size: 1.25rem;
   display: inline-block;
+  font-size: 1.25rem;
   padding: 12px 16px;
   position: relative;
   transition: 0.5s ease-in-out;
@@ -695,6 +707,101 @@ a {
 
 #endgame {
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../images/endgame-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.section {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  background-attachment: fixed;
+  min-height: 100%;
+  width: 100%;
+}
+.section__content {
+  max-width: 550px;
+  padding: 1rem;
+  width: 100%;
+}
+.section__content span {
+  color: #B0BEC5;
+  display: block;
+  font-style: italic;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.section__content h1 {
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 6.25rem;
+  line-height: 1;
+}
+@media screen and (max-width: calc(768px - 1px)) {
+  .section__content h1 {
+    font-size: 3.125rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .section__content h1 {
+    font-size: 3.125rem;
+  }
+}
+.section__content p {
+  font-size: 0.875rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+.section__content a {
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: inline-block;
+  font-size: 1.5rem;
+  padding: 12px 18px 12px 0;
+  position: relative;
+  transition: 0.5s ease-in-out;
+}
+.section__content a:hover {
+  color: #C1272D;
+}
+.section__content a::before {
+  background-color: #C1272D;
+  content: "";
+  height: 2px;
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  transition: 0.5s ease-in-out;
+  width: 30%;
+}
+
+#movie1 {
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../images/the-avengers-home-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#movie2 {
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../images/age-of-ultron-home-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#movie3 {
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../images/infinity-war-home-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#movie4 {
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../images/endgame-home-bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

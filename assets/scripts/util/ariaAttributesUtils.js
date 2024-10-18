@@ -9,7 +9,7 @@ export const updateAriaAttributes = (button, isOpen) => {
   });
 };
 
-export const updateAriaHidden = (modal, isHidden, elements) => {
-  modal.setAttribute("aria-hidden", !isHidden);
+export const updateAriaHidden = (element, isHidden, elements) => {
+  element.setAttribute("aria-hidden", !isHidden);
   elements.forEach((element) => element.setAttribute("aria-hidden", isHidden));
 };

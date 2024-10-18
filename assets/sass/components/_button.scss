@@ -93,6 +93,8 @@
     transition: .5s ease-in-out;
 
     @include hover {
+        opacity: .5;
+
         &::after {
             transform: rotate(225deg);
         }
