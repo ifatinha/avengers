@@ -61,30 +61,3 @@
     }
 }
 
-#theAvengersPage {
-    .synopsis {
-        @include bg-gradient(linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), "../images/the-avengers-about-bg.jpg");
-        background-attachment: fixed;
-    }
-}
-
-#ageOfUltronPage {
-    .synopsis {
-        @include bg-gradient(linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), "../images/age-of-ultron-about-bg.jpg");
-        background-attachment: fixed;
-    }
-}
-
-#infinityWarPage {
-    .synopsis {
-        @include bg-gradient(linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), "../images/infinity-age-about-bg.jpg");
-        background-attachment: fixed;
-    }
-}
-
-#endgamePage {
-    .synopsis {
-        @include bg-gradient(linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), "../images/endgame-about-bg.jpg");
-        background-attachment: fixed;
-    }
-}

@@ -60,6 +60,8 @@
     }
 }
 
+// Filmes
+
 .movie__section {
     background-attachment: fixed;
 
@@ -142,6 +144,8 @@
         "../images/endgame-home-bg.jpg");
 }
 
+//Sinopses
+
 .synopsis {
     position: relative;
 
@@ -160,5 +164,33 @@
             font-size  : get-font-size(15);
             line-height: 1.5;
         }
+    }
+}
+
+#theAvengersPage {
+    .synopsis {
+        @include bg-gradient(linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), "../images/the-avengers-about-bg.jpg");
+        background-attachment: fixed;
+    }
+}
+
+#ageOfUltronPage {
+    .synopsis {
+        @include bg-gradient(linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), "../images/age-of-ultron-about-bg.jpg");
+        background-attachment: fixed;
+    }
+}
+
+#infinityWarPage {
+    .synopsis {
+        @include bg-gradient(linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), "../images/infinity-age-about-bg.jpg");
+        background-attachment: fixed;
+    }
+}
+
+#endgamePage {
+    .synopsis {
+        @include bg-gradient(linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), "../images/endgame-about-bg.jpg");
+        background-attachment: fixed;
     }
 }
