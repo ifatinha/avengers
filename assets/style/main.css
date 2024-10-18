@@ -327,12 +327,6 @@ a {
   width: 100%;
 }
 
-#sidebarOpenButton {
-  position: absolute;
-  left: 3rem;
-  top: 2rem;
-}
-
 #sidebarCloseButton {
   padding-top: 2rem;
 }
@@ -351,7 +345,7 @@ a {
   position: fixed;
   transform: translateX(-400px);
   transition: transform 0.7s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
-  width: 200px;
+  width: 240px;
   z-index: 999;
 }
 .sidebar::-webkit-scrollbar {
@@ -710,6 +704,18 @@ a {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+.header__page {
+  position: absolute;
+  padding: 1rem 1%;
+  width: 100%;
+}
+.header__page .container {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
 }
 
 .section {

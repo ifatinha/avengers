@@ -3,9 +3,9 @@
 @use "../base/mixins"as *;
 
 #sidebarOpenButton {
-    position: absolute;
-    left    : 3rem;
-    top     : 2rem;
+    // position: absolute;
+    // left    : 3rem;
+    // top     : 2rem;
 }
 
 #sidebarCloseButton {
@@ -25,7 +25,7 @@
     transform     : translateX(-400px);
     transition    : transform .7s cubic-bezier(.645, .045, .355, 1),
         -webkit-transform .7s cubic-bezier(.645, .045, .355, 1);
-    width  : 200px;
+    width  : 240px;
     z-index: 999;
 
     &::-webkit-scrollbar {

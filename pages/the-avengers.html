@@ -53,11 +53,19 @@
 
 <body>
 
-  <button class="burger__button" type="button" id="sidebarOpenButton" aria-label="Abrir Menu" aria-expanded="false"
-    aria-haspopup="true" aria-controls="sidebar">
-    <span class="burger__button-bars" id="burgerBars" aria-hidden="true"></span>
-    <span class="burger__button-visually">Menu</span>
-  </button>
+  <header class="header__page">
+    <div class="container">
+      <button class="burger__button" type="button" id="sidebarOpenButton" aria-label="Abrir Menu" aria-expanded="false"
+        aria-haspopup="true" aria-controls="sidebar">
+        <span class="burger__button-bars" id="burgerBars" aria-hidden="true"></span>
+        <span class="burger__button-visually">Menu</span>
+      </button>
+
+      <a href="/index.html">
+        <img src="../assets/icons/avengers.png" alt="Avengers" height="50" width="50">
+      </a>
+    </div>
+  </header>
 
   <div class="sidebar" id="sidebar" aria-hidden="true">
     <button class="close__button" id="sidebarCloseButton" aria-label="Fechar Menu">
@@ -67,7 +75,7 @@
     </button>
     <ul class="sidebar__list">
       <li>
-        <a href="/index.html" class="sidebar__link-activated">Inicio</a>
+        <a href="#" class="sidebar__link-activated">Inicio</a>
       </li>
       <li>
         <a href="#synopsis">Sinopse</a>
@@ -96,9 +104,6 @@
           <a href="#">Ver Trailer</a>
         </div>
       </div>
-    </section>
-    <section>
-      sinopse
     </section>
   </main>
 

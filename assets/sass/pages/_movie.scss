@@ -4,6 +4,16 @@
 @use "../global/responsive"as *;
 @use "../global/animations"as *;
 
+.header__page {
+    position: absolute;
+    padding : 1rem 1%;
+    width   : 100%;
+
+    .container {
+        @include flex(center, space-between);
+    }
+}
+
 .section {
     @include flex(center, center);
     background-attachment: fixed;
