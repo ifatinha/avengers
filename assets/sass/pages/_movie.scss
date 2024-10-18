@@ -5,24 +5,70 @@
 @use "../global/animations"as *;
 
 .header__page {
+    @include flex(center, space-between);
     position: absolute;
     padding : 1rem 1%;
     width   : 100%;
 
-    .container {
-        @include flex(center, space-between);
+    &-navbar {
+        @include flex(center, space-between, 2rem);
+
+        @include devices-small-screens {
+            display: none;
+        }
+
+        a {
+            display       : inline-block;
+            font-size     : get-font-size(14);
+            font-weight   : 500;
+            letter-spacing: 1px;
+            padding       : 12px 0;
+            position      : relative;
+            transition    : .5s ease-in-out;
+            text-transform: uppercase;
+
+            @include hover {
+
+                &::after {
+                    width: 50%;
+                }
+            }
+
+            &::after {
+                @include apply-bg-color("red");
+                bottom    : 0;
+                content   : "";
+                height    : 2px;
+                left      : 0;
+                position  : absolute;
+                transition: .5s ease-in-out;
+                width     : 0%;
+            }
+        }
+    }
+
+    #watchTrailerButton {
+        @include devices-small-screens {
+            display: none;
+        }
+    }
+}
+
+.navbar__link-activated {
+    &::after {
+        width: 50% !important;
     }
 }
 
 .section {
-    @include flex(center, center);
+    @include flex(end, center);
     background-attachment: fixed;
-    min-height           : 100%;
+    height               : 100%;
     width                : 100%;
 
     &__content {
         max-width: 550px;
-        padding  : 1rem;
+        padding  : 1rem 1rem 2rem;
         width    : 100%;
 
         span {
@@ -80,17 +126,21 @@
 }
 
 #movie1 {
-    @include bg-gradient("../images/the-avengers-home-bg.jpg", .9);
+    @include bg-gradient(linear-gradient(to right, rgba(10.5, 31.5, 52.5, 1) calc((50vw - 170px) - 340px), rgba(10.5, 31.5, 52.5, 0.84) 50%, rgba(10.5, 31.5, 52.5, 0.84) 100%),
+        "../images/the-avengers-home-bg.jpg");
 }
 
 #movie2 {
-    @include bg-gradient("../images/age-of-ultron-home-bg.jpg", .9);
+    @include bg-gradient(linear-gradient(to right, rgba(31.5, 31.5, 52.5, 1) calc((50vw - 170px) - 340px), rgba(31.5, 31.5, 52.5, 0.84) 50%, rgba(31.5, 31.5, 52.5, 0.84) 100%),
+        "../images/age-of-ultron-home-bg.jpg");
 }
 
 #movie3 {
-    @include bg-gradient("../images/infinity-war-home-bg.jpg", .9);
+    @include bg-gradient(linear-gradient(to right, rgba(31.5, 10.5, 31.5, 1) calc((50vw - 170px) - 340px), rgba(31.5, 10.5, 31.5, 0.84) 50%, rgba(31.5, 10.5, 31.5, 0.84) 100%),
+        "../images/infinity-war-home-bg.jpg");
 }
 
 #movie4 {
-    @include bg-gradient("../images/endgame-home-bg.jpg", .9);
+    @include bg-gradient(linear-gradient(to right, rgba(31.5, 10.5, 73.5, 1) calc((50vw - 170px) - 340px), rgba(31.5, 10.5, 73.5, 0.84) 50%, rgba(31.5, 10.5, 73.5, 0.84) 100%),
+        "../images/endgame-home-bg.jpg");
 }

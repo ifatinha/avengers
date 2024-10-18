@@ -52,25 +52,55 @@
 </head>
 
 <body>
+
     <header class="header__page">
-        <div class="container">
-            <button class="burger__button" type="button" id="sidebarOpenButton" aria-label="Abrir Menu"
-                aria-expanded="false" aria-haspopup="true" aria-controls="sidebar">
-                <span class="burger__button-bars" id="burgerBars" aria-hidden="true"></span>
-                <span class="burger__button-visually">Menu</span>
-            </button>
-            <a href="/index.html">
-                <img src="../assets/icons/avengers.png" alt="Avengers" height="50" width="50">
-            </a>
-        </div>
+        <a href="/index.html">
+            <img src="../assets/icons/avengers.png" alt="Avengers" height="50" width="50">
+        </a>
+
+        <nav>
+            <ul class="header__page-navbar">
+                <li>
+                    <a href="#" class="navbar__link-activated">Inicio</a>
+                </li>
+                <li>
+                    <a href="#synopsis">Sinopse</a>
+                </li>
+                <li>
+                    <a href="#cast">Elenco</a>
+                </li>
+                <li>
+                    <a href="#videos">Videos</a>
+                </li>
+                <li>
+                    <a href="#gallery">Galeria</a>
+                </li>
+                <li>
+                    <a href="#news">Posters</a>
+                </li>
+            </ul>
+        </nav>
+
+        <a href="#" class="button button-red" id="watchTrailerButton">Ver Trailer</a>
+
+        <button class="burger__button" type="button" id="sidebarOpenButton" aria-label="Abrir Menu"
+            aria-expanded="false" aria-haspopup="true" aria-controls="sidebar">
+            <span class="burger__button-visually">Menu</span>
+            <span class="burger__button-bars" id="burgerBars" aria-hidden="true"></span>
+        </button>
     </header>
 
     <div class="sidebar" id="sidebar" aria-hidden="true">
-        <button class="close__button" id="sidebarCloseButton" aria-label="Fechar Menu">
-            <span aria-hidden="true">Fechar</span>
-            <span class="close__button-x"></span>
-            <span class="close__button-y"></span>
-        </button>
+        <div class="sidebar__buttons">
+            <a href="/index.html">
+                <img src="../assets/icons/marvel.png" alt="Avengers">
+            </a>
+            <button class="close__button" id="sidebarCloseButton" aria-label="Fechar Menu">
+                <span aria-hidden="true">Fechar</span>
+                <span class="close__button-x"></span>
+                <span class="close__button-y"></span>
+            </button>
+        </div>
         <ul class="sidebar__list">
             <li>
                 <a href="#" class="sidebar__link-activated">Inicio</a>
@@ -88,7 +118,7 @@
                 <a href="#gallery">Galeria</a>
             </li>
             <li>
-                <a href="#news">Notícias</a>
+                <a href="#news">Posters</a>
             </li>
         </ul>
     </div>

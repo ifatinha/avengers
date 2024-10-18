@@ -222,17 +222,21 @@
 }
 
 #theAvengers {
-    @include bg-gradient("../images/the-avengers-bg.jpg", .8);
+    @include bg-gradient(linear-gradient(to right, rgba(10.5, 31.5, 52.5, 1) calc((50vw - 170px) - 340px), rgba(10.5, 31.5, 52.5, 0.84) 50%, rgba(10.5, 31.5, 52.5, 0.84) 100%),
+        "../images/the-avengers-bg.jpg");
 }
 
 #ageOfUltron {
-    @include bg-gradient("../images/age-of-ultron-bg.jpg", .8);
+    @include bg-gradient(linear-gradient(to right, rgba(31.5, 31.5, 52.5, 1) calc((50vw - 170px) - 340px), rgba(31.5, 31.5, 52.5, 0.84) 50%, rgba(31.5, 31.5, 52.5, 0.84) 100%),
+        "../images/age-of-ultron-bg.jpg");
 }
 
 #infinityWar {
-    @include bg-gradient("../images/infinity-war-bg.jpg", .8);
+    @include bg-gradient(linear-gradient(to right, rgba(31.5, 10.5, 31.5, 1) calc((50vw - 170px) - 340px), rgba(31.5, 10.5, 31.5, 0.84) 50%, rgba(31.5, 10.5, 31.5, 0.84) 100%),
+        "../images/infinity-war-bg.jpg");
 }
 
 #endgame {
-    @include bg-gradient("../images/endgame-bg.jpg", .8);
+    @include bg-gradient(linear-gradient(to right, rgba(31.5, 10.5, 73.5, 1) calc((50vw - 170px) - 340px), rgba(31.5, 10.5, 73.5, 0.84) 50%, rgba(31.5, 10.5, 73.5, 0.84) 100%),
+        "../images/endgame-bg.jpg");
 }

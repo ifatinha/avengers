@@ -216,6 +216,22 @@ a {
   transform: rotate(-45deg);
 }
 
+.button {
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 12px 18px;
+  text-transform: uppercase;
+  transition: 0.5s ease-in-out;
+}
+
+.button-red {
+  background-color: #C1272D;
+  color: #000000;
+}
+.button-red:hover {
+  background: #A02025;
+}
+
 .modal {
   color: #FFFFFF;
   background: rgba(206, 24, 49, 0.97);
@@ -327,8 +343,20 @@ a {
   width: 100%;
 }
 
-#sidebarCloseButton {
-  padding-top: 2rem;
+@media screen and (min-width: 1920px) {
+  #sidebarOpenButton {
+    display: none;
+  }
+}
+@media screen and (min-width: 1440px) and (max-width: calc(1920px - 1px)) {
+  #sidebarOpenButton {
+    display: none;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: calc(1440px - 1px)) {
+  #sidebarOpenButton {
+    display: none;
+  }
 }
 
 .sidebar {
@@ -341,22 +369,40 @@ a {
   flex-direction: column;
   height: 100%;
   overflow-y: auto;
-  padding-top: 1rem;
+  padding: 1rem;
   position: fixed;
-  transform: translateX(-400px);
+  transform: translateX(400px);
   transition: transform 0.7s cubic-bezier(0.645, 0.045, 0.355, 1), -webkit-transform 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
-  width: 240px;
+  right: 0;
+  width: 300px;
   z-index: 999;
 }
 .sidebar::-webkit-scrollbar {
   width: 0;
 }
+.sidebar__buttons {
+  align-items: center;
+  display: flex;
+  gap: 0;
+  justify-content: space-between;
+  width: 100%;
+}
+.sidebar__buttons a {
+  width: 120px;
+}
+.sidebar__buttons a img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
 .sidebar__list {
+  flex-grow: 1;
   margin-top: 3rem;
   width: 100%;
 }
 .sidebar__list li {
   margin-bottom: 0.5rem;
+  text-align: center;
   width: 100%;
 }
 .sidebar__list li a {
@@ -373,7 +419,7 @@ a {
   position: relative;
   transition: 0.5s ease-in-out;
   text-align: center;
-  width: 100%;
+  width: 180px;
 }
 .sidebar__list li a:hover {
   color: #C1272D;
@@ -386,7 +432,7 @@ a {
   content: "";
   height: 2px;
   position: absolute;
-  right: -28px;
+  left: -28px;
   top: 50%;
   transition: 0.5s ease-in-out;
   width: 0%;
@@ -679,57 +725,118 @@ a {
 }
 
 #theAvengers {
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../images/the-avengers-bg.jpg");
+  background: linear-gradient(to right, rgb(11, 32, 53) calc(50vw - 170px - 340px), rgba(11, 32, 53, 0.84) 50%, rgba(11, 32, 53, 0.84) 100%), url("../images/the-avengers-bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 #ageOfUltron {
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../images/age-of-ultron-bg.jpg");
+  background: linear-gradient(to right, rgb(32, 32, 53) calc(50vw - 170px - 340px), rgba(32, 32, 53, 0.84) 50%, rgba(32, 32, 53, 0.84) 100%), url("../images/age-of-ultron-bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 #infinityWar {
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../images/infinity-war-bg.jpg");
+  background: linear-gradient(to right, rgb(32, 11, 32) calc(50vw - 170px - 340px), rgba(32, 11, 32, 0.84) 50%, rgba(32, 11, 32, 0.84) 100%), url("../images/infinity-war-bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 #endgame {
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../images/endgame-bg.jpg");
+  background: linear-gradient(to right, rgb(32, 11, 74) calc(50vw - 170px - 340px), rgba(32, 11, 74, 0.84) 50%, rgba(32, 11, 74, 0.84) 100%), url("../images/endgame-bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 .header__page {
-  position: absolute;
-  padding: 1rem 1%;
-  width: 100%;
-}
-.header__page .container {
   align-items: center;
   display: flex;
   gap: 1rem;
   justify-content: space-between;
+  position: absolute;
+  padding: 1rem 1%;
+  width: 100%;
+}
+.header__page-navbar {
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+}
+@media screen and (min-width: 768px) and (max-width: calc(1024px - 1px)) {
+  .header__page-navbar {
+    display: none;
+  }
+}
+@media screen and (max-width: calc(768px - 1px)) {
+  .header__page-navbar {
+    display: none;
+  }
+}
+@media screen and (max-width: 480px) {
+  .header__page-navbar {
+    display: none;
+  }
+}
+.header__page-navbar a {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  padding: 12px 0;
+  position: relative;
+  transition: 0.5s ease-in-out;
+  text-transform: uppercase;
+}
+.header__page-navbar a:hover::after {
+  width: 50%;
+}
+.header__page-navbar a::after {
+  background-color: #C1272D;
+  bottom: 0;
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
+  transition: 0.5s ease-in-out;
+  width: 0%;
+}
+@media screen and (min-width: 768px) and (max-width: calc(1024px - 1px)) {
+  .header__page #watchTrailerButton {
+    display: none;
+  }
+}
+@media screen and (max-width: calc(768px - 1px)) {
+  .header__page #watchTrailerButton {
+    display: none;
+  }
+}
+@media screen and (max-width: 480px) {
+  .header__page #watchTrailerButton {
+    display: none;
+  }
+}
+
+.navbar__link-activated::after {
+  width: 50% !important;
 }
 
 .section {
-  align-items: center;
+  align-items: end;
   display: flex;
   gap: 1rem;
   justify-content: center;
   background-attachment: fixed;
-  min-height: 100%;
+  height: 100%;
   width: 100%;
 }
 .section__content {
   max-width: 550px;
-  padding: 1rem;
+  padding: 1rem 1rem 2rem;
   width: 100%;
 }
 .section__content span {
@@ -786,28 +893,28 @@ a {
 }
 
 #movie1 {
-  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../images/the-avengers-home-bg.jpg");
+  background: linear-gradient(to right, rgb(11, 32, 53) calc(50vw - 170px - 340px), rgba(11, 32, 53, 0.84) 50%, rgba(11, 32, 53, 0.84) 100%), url("../images/the-avengers-home-bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 #movie2 {
-  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../images/age-of-ultron-home-bg.jpg");
+  background: linear-gradient(to right, rgb(32, 32, 53) calc(50vw - 170px - 340px), rgba(32, 32, 53, 0.84) 50%, rgba(32, 32, 53, 0.84) 100%), url("../images/age-of-ultron-home-bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 #movie3 {
-  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../images/infinity-war-home-bg.jpg");
+  background: linear-gradient(to right, rgb(32, 11, 32) calc(50vw - 170px - 340px), rgba(32, 11, 32, 0.84) 50%, rgba(32, 11, 32, 0.84) 100%), url("../images/infinity-war-home-bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 #movie4 {
-  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../images/endgame-home-bg.jpg");
+  background: linear-gradient(to right, rgb(32, 11, 74) calc(50vw - 170px - 340px), rgba(32, 11, 74, 0.84) 50%, rgba(32, 11, 74, 0.84) 100%), url("../images/endgame-home-bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

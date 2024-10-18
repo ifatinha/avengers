@@ -1,15 +1,12 @@
 @use "../base/colors"as *;
 @use "../base/typography"as *;
 @use "../base/mixins"as *;
+@use "../global/responsive"as *;
 
 #sidebarOpenButton {
-    // position: absolute;
-    // left    : 3rem;
-    // top     : 2rem;
-}
-
-#sidebarCloseButton {
-    padding-top: 2rem;
+    @include devices-large-screens {
+        display: none;
+    }
 }
 
 .sidebar {
@@ -20,24 +17,42 @@
     flex-direction: column;
     height        : 100%;
     overflow-y    : auto;
-    padding-top   : 1rem;
+    padding       : 1rem;
     position      : fixed;
-    transform     : translateX(-400px);
+    transform     : translateX(400px);
     transition    : transform .7s cubic-bezier(.645, .045, .355, 1),
         -webkit-transform .7s cubic-bezier(.645, .045, .355, 1);
-    width  : 240px;
+    right  : 0;
+    width  : 300px;
     z-index: 999;
 
     &::-webkit-scrollbar {
         width: 0;
     }
 
+    &__buttons {
+        @include flex(center, space-between, 0);
+        width: 100%;
+
+        a {
+            width: 120px;
+
+            img {
+                height    : 100%;
+                object-fit: cover;
+                width     : 100%;
+            }
+        }
+    }
+
     &__list {
+        flex-grow : 1;
         margin-top: 3rem;
         width     : 100%;
 
         li {
             margin-bottom: .5rem;
+            text-align   : center;
             width        : 100%;
 
             a {
@@ -49,7 +64,7 @@
                 position  : relative;
                 transition: .5s ease-in-out;
                 text-align: center;
-                width     : 100%;
+                width     : 180px;
 
                 @include hover() {
                     @include apply-color("red");
@@ -64,7 +79,7 @@
                     content   : "";
                     height    : 2px;
                     position  : absolute;
-                    right     : -28px;
+                    left      : -28px;
                     top       : 50%;
                     transition: .5s ease-in-out;
                     width     : 0%;
