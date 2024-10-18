@@ -60,13 +60,10 @@
     }
 }
 
-.section {
-    @include flex(end, center);
+.movie__section {
     background-attachment: fixed;
-    height               : 100%;
-    width                : 100%;
 
-    &__content {
+    &-content {
         max-width: 550px;
         padding  : 1rem 1rem 2rem;
         width    : 100%;
@@ -143,4 +140,25 @@
 #movie4 {
     @include bg-gradient(linear-gradient(to right, rgba(31.5, 10.5, 73.5, 1) calc((50vw - 170px) - 340px), rgba(31.5, 10.5, 73.5, 0.84) 50%, rgba(31.5, 10.5, 73.5, 0.84) 100%),
         "../images/endgame-home-bg.jpg");
+}
+
+.synopsis {
+    position: relative;
+
+    &__description {
+        max-width: 550px;
+        padding  : 1rem;
+        width    : 100%;
+
+        @include devices-large-screens {
+            position: absolute;
+            right   : 30px;
+            top     : 3rem;
+        }
+
+        p {
+            font-size  : get-font-size(15);
+            line-height: 1.5;
+        }
+    }
 }

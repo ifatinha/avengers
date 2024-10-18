@@ -104,6 +104,16 @@ a {
   text-decoration: none;
 }
 
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .burger__button {
   align-items: center;
   display: flex;
@@ -449,16 +459,110 @@ a {
   transform: translateZ(0) !important;
 }
 
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+.section {
+  align-items: end;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  background-attachment: fixed;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+@media screen and (min-width: 1920px) {
+  .section {
+    flex-direction: row;
   }
 }
+@media screen and (min-width: 1440px) and (max-width: calc(1920px - 1px)) {
+  .section {
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: calc(1440px - 1px)) {
+  .section {
+    flex-direction: row;
+  }
+}
+.section__title {
+  color: rgba(193, 39, 45, 0.3);
+  font-size: 6.25rem;
+  font-family: Arial Black, sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+@media screen and (max-width: calc(768px - 1px)) {
+  .section__title {
+    font-size: 3.125rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .section__title {
+    font-size: 3.125rem;
+  }
+}
+.section__container {
+  padding: 0 2%;
+  position: relative;
+}
+.section__container .section__subtitle {
+  bottom: 50px;
+  font-family: Arial Black, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  position: absolute;
+  text-transform: uppercase;
+}
+@media screen and (max-width: calc(768px - 1px)) {
+  .section__container .section__subtitle {
+    bottom: 20px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .section__container .section__subtitle {
+    bottom: 20px;
+  }
+}
+.section__container .section__subtitle span {
+  color: #C1272D;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+#theAvengersPage .synopsis {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../images/the-avengers-about-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#ageOfUltronPage .synopsis {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../images/age-of-ultron-about-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#infinityWarPage .synopsis {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/infinity-age-about-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#endgamePage .synopsis {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/endgame-about-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 .movies {
   height: 100%;
   position: relative;
@@ -825,28 +929,22 @@ a {
   width: 50% !important;
 }
 
-.section {
-  align-items: end;
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
+.movie__section {
   background-attachment: fixed;
-  height: 100%;
-  width: 100%;
 }
-.section__content {
+.movie__section-content {
   max-width: 550px;
   padding: 1rem 1rem 2rem;
   width: 100%;
 }
-.section__content span {
+.movie__section-content span {
   color: #B0BEC5;
   display: block;
   font-style: italic;
   font-weight: 500;
   margin-bottom: 0.5rem;
 }
-.section__content h1 {
+.movie__section-content h1 {
   font-family: "Bebas Neue", sans-serif;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -854,21 +952,21 @@ a {
   line-height: 1;
 }
 @media screen and (max-width: calc(768px - 1px)) {
-  .section__content h1 {
+  .movie__section-content h1 {
     font-size: 3.125rem;
   }
 }
 @media screen and (max-width: 480px) {
-  .section__content h1 {
+  .movie__section-content h1 {
     font-size: 3.125rem;
   }
 }
-.section__content p {
+.movie__section-content p {
   font-size: 0.875rem;
   line-height: 1.8;
   margin-bottom: 1rem;
 }
-.section__content a {
+.movie__section-content a {
   font-family: "Bebas Neue", sans-serif;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -878,10 +976,10 @@ a {
   position: relative;
   transition: 0.5s ease-in-out;
 }
-.section__content a:hover {
+.movie__section-content a:hover {
   color: #C1272D;
 }
-.section__content a::before {
+.movie__section-content a::before {
   background-color: #C1272D;
   content: "";
   height: 2px;
@@ -918,6 +1016,40 @@ a {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+.synopsis {
+  position: relative;
+}
+.synopsis__description {
+  max-width: 550px;
+  padding: 1rem;
+  width: 100%;
+}
+@media screen and (min-width: 1920px) {
+  .synopsis__description {
+    position: absolute;
+    right: 30px;
+    top: 3rem;
+  }
+}
+@media screen and (min-width: 1440px) and (max-width: calc(1920px - 1px)) {
+  .synopsis__description {
+    position: absolute;
+    right: 30px;
+    top: 3rem;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: calc(1440px - 1px)) {
+  .synopsis__description {
+    position: absolute;
+    right: 30px;
+    top: 3rem;
+  }
+}
+.synopsis__description p {
+  font-size: 0.9375rem;
+  line-height: 1.5;
 }
 
 /*# sourceMappingURL=main.css.map */

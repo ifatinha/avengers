@@ -1,0 +1,90 @@
+@use "../base/mixins"as *;
+@use "../base/colors"as *;
+@use "../base/typography"as *;
+@use "../global/responsive"as *;
+
+.section {
+    @include flex(end, center);
+    background-attachment: fixed;
+    flex-direction       : column;
+    height               : 100%;
+    width                : 100%;
+
+    @include devices-large-screens {
+        flex-direction: row;
+    }
+
+    &__title {
+        color         : rgba(193, 39, 45, 0.3);
+        font-size     : get-font-size(100);
+        font-family   : Arial Black, sans-serif;
+        font-weight   : 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+
+        @include devices(m) {
+            font-size: get-font-size(50);
+        }
+
+        @include devices(xs) {
+            font-size: get-font-size(50);
+        }
+    }
+
+    &__container {
+        padding : 0 2%;
+        position: relative;
+
+        .section__subtitle {
+            bottom        : 50px;
+            font-family   : Arial Black, sans-serif;
+            font-size     : get-font-size(20);
+            font-weight   : 600;
+            letter-spacing: 2px;
+            position      : absolute;
+            text-transform: uppercase;
+
+            @include devices(m) {
+                bottom: 20px;
+            }
+
+            @include devices(xs) {
+                bottom: 20px;
+            }
+
+            span {
+                @include apply-color("red");
+                font-size  : get-font-size(20);
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+#theAvengersPage {
+    .synopsis {
+        @include bg-gradient(linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), "../images/the-avengers-about-bg.jpg");
+        background-attachment: fixed;
+    }
+}
+
+#ageOfUltronPage {
+    .synopsis {
+        @include bg-gradient(linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), "../images/age-of-ultron-about-bg.jpg");
+        background-attachment: fixed;
+    }
+}
+
+#infinityWarPage {
+    .synopsis {
+        @include bg-gradient(linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), "../images/infinity-age-about-bg.jpg");
+        background-attachment: fixed;
+    }
+}
+
+#endgamePage {
+    .synopsis {
+        @include bg-gradient(linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), "../images/endgame-about-bg.jpg");
+        background-attachment: fixed;
+    }
+}
