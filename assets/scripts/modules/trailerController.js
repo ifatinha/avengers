@@ -14,6 +14,10 @@ const handleModalToggle = (modal, button, isOpen, elements) => {
   modal.classList.toggle("modal__active", isOpen);
   updateAriaAttributes(button, isOpen);
   updateAriaHidden(modal, isOpen, elements);
+
+  if(isOpen == false){
+    window.location.reload();
+  }
 };
 
 const attachEventListeners = (button, handler) => {
