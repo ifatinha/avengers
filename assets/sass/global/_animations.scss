@@ -17,3 +17,27 @@
     animation      : fadeInUp $duration ease-out forwards;
     animation-delay: $delay;
 }
+
+@keyframes pulse {
+    0% {
+        -moz-box-shadow   : 0 0 0 0 rgba(193, 39, 45, 0.4);
+        -webkit-box-shadow: 0 0 0 0 rgba(193, 39, 45, 0.4);
+        box-shadow        : 0 0 0 0 rgba(193, 39, 45, 0.4);
+    }
+
+    70% {
+        -moz-box-shadow   : 0 0 0 30px rgba(193, 39, 45, 0);
+        -webkit-box-shadow: 0 0 0 30px rgba(193, 39, 45, 0);
+        box-shadow        : 0 0 0 30px rgba(193, 39, 45, 0);
+    }
+
+    100% {
+        moz-box-shadow    : 0 0 0 0 rgba(193, 39, 45, 0);
+        -webkit-box-shadow: 0 0 0 0 rgba(193, 39, 45, 0);
+        box-shadow        : 0 0 0 0 rgba(193, 39, 45, 0);
+    }
+}
+
+@mixin pulse() {
+    animation: pulse 2s infinite;
+}

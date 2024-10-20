@@ -2,6 +2,10 @@ import { openMenuModal, closeMenuModal } from "./modules/menuController.js";
 import { initializeCarouselMovies } from "./modules/carouselMovies.js";
 import { openSideBar, closeSidebar } from "./modules/sidebarController.js";
 import { updateCharacterInfo } from "./modules/carouselCharacter.js";
+import {
+  openTrailerModal,
+  closeTrailerModal,
+} from "./modules/trailerController.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const functionsToCall = [
@@ -11,6 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
     { name: "openSideBar", func: openSideBar },
     { name: "closeSidebar", func: closeSidebar },
     { name: "updateCharacterInfo", func: updateCharacterInfo },
+    { name: "openTrailerModal", func: openTrailerModal },
+    { name: "closeTrailerModal", func: closeTrailerModal },
   ];
 
   functionsToCall.forEach(({ name, func }) => {

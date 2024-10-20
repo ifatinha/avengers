@@ -17,7 +17,7 @@ const getDomElements = () => ({
 
 const getPageCharacters = () => {
   const pageId = document.body.id;
-  console.log(pageId);
+  
   if (pageId === "theAvengersPage") {
     characters = theAvengers;
   } else if (pageId === "ageOfUltronPage") {
