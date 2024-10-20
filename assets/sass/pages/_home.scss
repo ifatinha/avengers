@@ -22,24 +22,11 @@
     }
 }
 
-.carousel__movies {
-    height  : 100%;
-    padding : 1rem;
-    position: relative;
-    width   : 100%;
-}
-
 .carousel__movie {
     @include flex(center, center);
-    height       : 100%;
-    inset        : 0;
     margin-bottom: 1rem;
     opacity      : 0;
     padding      : 1rem;
-    position     : absolute;
-    transition   : 1s ease-in-out;
-    width        : 100%;
-    z-index      : -1;
 
     &-content {
         max-width    : 580px;
@@ -121,38 +108,6 @@
 
     .carousel__movie-link {
         @include fadeInUp(2s, 1s);
-    }
-}
-
-#next {
-    right: 112px;
-    top  : 20%;
-
-    @include devices(xxl) {
-        right: 144px;
-    }
-
-    @include devices-small-screens {
-        right: 1rem;
-        top  : 14%;
-    }
-
-    @include mobile-landscape {
-        top: 20%;
-    }
-
-}
-
-#prev {
-    bottom: 10%;
-    left  : 112px;
-
-    @include devices(xxl) {
-        left: 144px;
-    }
-
-    @include devices-small-screens {
-        left: 1rem;
     }
 }
 

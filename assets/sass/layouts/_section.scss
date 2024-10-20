@@ -5,51 +5,57 @@
 
 .section {
     @include flex(end, center);
-    background-attachment: fixed;
     flex-direction       : column;
-    height               : 100%;
+    background-attachment: fixed;
+    padding              : 80px 2%;
+    min-height           : 100%;
     width                : 100%;
 
     @include devices-large-screens {
         flex-direction: row;
     }
 
-    &__title {
-        color         : rgba(193, 39, 45, 0.3);
-        font-size     : get-font-size(100);
-        font-family   : Arial Black, sans-serif;
-        font-weight   : 700;
-        letter-spacing: 2px;
-        text-transform: uppercase;
+    &__description {
+        max-width : 650px;
+        padding   : 0 2%;
+        position  : relative;
 
-        @include devices(m) {
-            font-size: get-font-size(50);
+        .section__title {
+            color         : rgba(193, 39, 45, 0.3);
+            font-size     : get-font-size(80);
+            font-family   : Arial Black, sans-serif;
+            font-weight   : 700;
+            letter-spacing: 2px;
+            line-height   : 100px;
+            text-transform: uppercase;
+
+            @include devices(m) {
+                font-size  : get-font-size(50);
+                line-height: 50px;
+            }
+
+            @include devices(xs) {
+                font-size  : get-font-size(50);
+                line-height: 50px;
+            }
         }
-
-        @include devices(xs) {
-            font-size: get-font-size(50);
-        }
-    }
-
-    &__container {
-        padding : 0 2%;
-        position: relative;
 
         .section__subtitle {
-            bottom        : 50px;
+            top           : 50%;
             font-family   : Arial Black, sans-serif;
-            font-size     : get-font-size(20);
+            font-size     : get-font-size(24);
             font-weight   : 600;
             letter-spacing: 2px;
             position      : absolute;
             text-transform: uppercase;
 
             @include devices(m) {
-                bottom: 20px;
+                bottom   : 30px;
+                font-size: get-font-size(20);
             }
 
             @include devices(xs) {
-                bottom: 20px;
+                bottom: 30px;
             }
 
             span {
@@ -60,4 +66,3 @@
         }
     }
 }
-

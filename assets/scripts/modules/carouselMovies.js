@@ -2,7 +2,7 @@ const showCarousel = (
   carouselCount,
   carouselItems,
   carouselButtons,
-  interval = 4000
+  interval = 6000
 ) => {
   let currentIndex = 0;
   let autoSlide;

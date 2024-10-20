@@ -1,0 +1,14 @@
+.carousel {
+    height  : 100%;
+    padding : 1rem;
+    position: relative;
+    width   : 100%;
+
+    &__item {
+        height    : 100%;
+        inset     : 0;
+        position  : absolute;
+        transition: 1s ease-in-out;
+        width     : 100%;
+    }
+}

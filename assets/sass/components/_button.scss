@@ -202,5 +202,43 @@
         margin-bottom : 6px;
         vertical-align: middle;
     }
+}
 
+.carousel__button-next {
+    right: 112px;
+    top  : 20%;
+
+    @include devices(xxl) {
+        right: 144px;
+    }
+
+    @include devices-small-screens {
+        right: 1rem;
+        top  : 14%;
+    }
+
+    @include mobile-landscape {
+        top: 20%;
+    }
+
+    @include table-landscape {
+        right: 1rem;
+    }
+}
+
+.carousel__button-prev {
+    bottom: 10%;
+    left  : 112px;
+
+    @include devices(xxl) {
+        left: 144px;
+    }
+
+    @include devices-small-screens {
+        left: 1rem;
+    }
+
+    @include table-landscape {
+        left: 1rem;
+    }
 }
