@@ -12,6 +12,10 @@
    text-transform: uppercase;
 }
 
+@mixin poppins() {
+   font-family: "Poppins", sans-serif;
+}
+
 @function get-font-size($size) {
    @return px-to-rem($size);
 }

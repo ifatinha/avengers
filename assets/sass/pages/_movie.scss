@@ -134,22 +134,22 @@
 
 #movie1 {
     @include bg-gradient(linear-gradient(to right, rgba(10.5, 31.5, 52.5, 1) calc((50vw - 170px) - 340px), rgba(10.5, 31.5, 52.5, 0.84) 50%, rgba(10.5, 31.5, 52.5, 0.84) 100%),
-        "../images/the-avengers-home-bg.jpg");
+        "../images/pages-bg/the-avengers-home-bg.webp");
 }
 
 #movie2 {
     @include bg-gradient(linear-gradient(to right, rgba(31.5, 31.5, 52.5, 1) calc((50vw - 170px) - 340px), rgba(31.5, 31.5, 52.5, 0.84) 50%, rgba(31.5, 31.5, 52.5, 0.84) 100%),
-        "../images/age-of-ultron-home-bg.jpg");
+        "../images/pages-bg/age-of-ultron-home-bg.webp");
 }
 
 #movie3 {
     @include bg-gradient(linear-gradient(to right, rgba(31.5, 10.5, 31.5, 1) calc((50vw - 170px) - 340px), rgba(31.5, 10.5, 31.5, 0.84) 50%, rgba(31.5, 10.5, 31.5, 0.84) 100%),
-        "../images/infinity-war-home-bg.jpg");
+        "../images/pages-bg/infinity-war-home-bg.webp");
 }
 
 #movie4 {
     @include bg-gradient(linear-gradient(to right, rgba(31.5, 10.5, 73.5, 1) calc((50vw - 170px) - 340px), rgba(31.5, 10.5, 73.5, 0.84) 50%, rgba(31.5, 10.5, 73.5, 0.84) 100%),
-        "../images/endgame-home-bg.jpg");
+        "../images/pages-bg/endgame-home-bg.webp");
 }
 
 //Sinopse
@@ -190,28 +190,28 @@
 
 #theAvengersPage {
     .synopsis {
-        @include bg-gradient(linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), "../images/the-avengers-about-bg.jpg");
+        @include bg-gradient(linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), "../images/synopsis/the-avengers-about-bg.webp");
         background-attachment: fixed;
     }
 }
 
 #ageOfUltronPage {
     .synopsis {
-        @include bg-gradient(linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), "../images/age-of-ultron-about-bg.jpg");
+        @include bg-gradient(linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), "../images/synopsis/age-of-ultron-about-bg.webp");
         background-attachment: fixed;
     }
 }
 
 #infinityWarPage {
     .synopsis {
-        @include bg-gradient(linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), "../images/infinity-age-about-bg.jpg");
+        @include bg-gradient(linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), "../images/synopsis/infinity-age-about-bg.webp");
         background-attachment: fixed;
     }
 }
 
 #endgamePage {
     .synopsis {
-        @include bg-gradient(linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), "../images/endgame-about-bg.jpg");
+        @include bg-gradient(linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), "../images/synopsis/endgame-about-bg.webp");
         background-attachment: fixed;
     }
 }
@@ -224,28 +224,28 @@
 
 #theAvengersPage {
     #cast {
-        @include bg-gradient(linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), "../images/the-avengers-cast-bg.jpg");
+        @include bg-gradient(linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), "../images/cast-bg/the-avengers-cast-bg.webp");
         background-attachment: fixed;
     }
 }
 
 #ageOfUltronPage {
     #cast {
-        @include bg-gradient(linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), "../images/the-age-of-ultron-cast-bg.jpg");
+        @include bg-gradient(linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), "../images/cast-bg/the-age-of-ultron-cast-bg.webp");
         background-attachment: fixed;
     }
 }
 
 #infinityWarPage {
     #cast {
-        @include bg-gradient(linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), "../images/the-infinity-war-cast-bg.jpg");
+        @include bg-gradient(linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), "../images/cast-bg/the-infinity-war-cast-bg.webp");
         background-attachment: fixed;
     }
 }
 
 #endgamePage {
     #cast {
-        @include bg-gradient(linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), "../images/endgamePage-cast-bg.jpg");
+        @include bg-gradient(linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), "../images/cast-bg/endgamePage-cast-bg.webp");
         background-attachment: fixed;
     }
 }
@@ -364,7 +364,7 @@
     position: relative;
 
     &::after {
-        @include bg-img("../images/gallery-bg.jpg");
+        @include bg-img("../images/gallery/gallery-bg.webp");
         background-attachment: fixed;
         content              : "";
         height               : 100%;
