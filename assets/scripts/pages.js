@@ -1,5 +1,3 @@
-import { openMenuModal, closeMenuModal } from "./modules/menuController.js";
-import { initializeCarouselMovies } from "./modules/carouselMovies.js";
 import { openSideBar, closeSidebar } from "./modules/sidebarController.js";
 import { updateCharacterInfo } from "./modules/carouselCharacter.js";
 import {
@@ -9,9 +7,6 @@ import {
 
 document.addEventListener("DOMContentLoaded", () => {
   const functionsToCall = [
-    { name: "openMenuModal", func: openMenuModal },
-    { name: "closeMenuModal", func: closeMenuModal },
-    { name: "initializeCarouselMovies", func: initializeCarouselMovies },
     { name: "openSideBar", func: openSideBar },
     { name: "closeSidebar", func: closeSidebar },
     { name: "updateCharacterInfo", func: updateCharacterInfo },

@@ -20,8 +20,8 @@
         .section__title {
             color         : rgba(193, 39, 45, 0.4);
             font-size     : get-font-size(80);
-            font-family   : Arial Black, sans-serif;
-            font-weight   : 700;
+            font-family   : Arial black, sans-serif !important;
+            font-weight   : 700;    
             letter-spacing: 2px;
             line-height   : 80px;
             margin-bottom : 1rem;
