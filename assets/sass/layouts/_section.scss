@@ -5,28 +5,26 @@
 
 .section {
     @include flex(end, center);
-    flex-direction       : column;
-    background-attachment: fixed;
-    padding              : 80px 2%;
-    min-height           : 100%;
-    width                : 100%;
+    flex-direction: column;
+    width         : 100%;
 
     @include devices-large-screens {
         flex-direction: row;
     }
 
     &__description {
-        max-width : 650px;
-        padding   : 0 2%;
-        position  : relative;
+        max-width: 650px;
+        padding  : 0 2%;
+        position : relative;
 
         .section__title {
-            color         : rgba(193, 39, 45, 0.3);
+            color         : rgba(193, 39, 45, 0.4);
             font-size     : get-font-size(80);
             font-family   : Arial Black, sans-serif;
             font-weight   : 700;
             letter-spacing: 2px;
-            line-height   : 100px;
+            line-height   : 80px;
+            margin-bottom : 1rem;
             text-transform: uppercase;
 
             @include devices(m) {

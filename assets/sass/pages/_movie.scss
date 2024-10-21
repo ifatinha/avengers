@@ -66,8 +66,12 @@
     @include flex(end, center);
     background-attachment: fixed;
     padding              : 0 2%;
-    height               : 100%;
+    height               : 100vh;
     width                : 100%;
+
+    @include devices-small-screens {
+        align-items: center;
+    }
 
     &-content {
         max-width: 550px;
@@ -151,9 +155,15 @@
 //Sinopse
 
 .synopsis {
-    min-height: 100%;
-    position  : relative;
-    width     : 100%;
+    padding-top   : 60px;
+    padding-bottom: 60px;
+    position      : relative;
+    width         : 100%;
+
+    @include devices-large-screens {
+        height : 100vh;
+        padding: 0;
+    }
 
     &__description {
         background: rgba(0, 0, 0, 0.6);
@@ -208,6 +218,10 @@
 
 //cast
 
+.cast {
+    height: 100vh;
+}
+
 #theAvengersPage {
     #cast {
         @include bg-gradient(linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), "../images/the-avengers-cast-bg.jpg");
@@ -237,7 +251,7 @@
 }
 
 .characters {
-    height: 100%;
+    height: 100vh;
     width : 100%;
 }
 
@@ -304,12 +318,12 @@
 }
 
 // trailer
-.videos {
-    height  : 100%;
+.trailer {
+    height  : 100vh;
     position: relative;
     width   : 100%;
 
-    .trailer {
+    &__video {
         @include flex(center, center, 0);
         height  : 100%;
         inset   : 0;
@@ -346,7 +360,7 @@
 
 // gallery
 .gallery {
-    
+    height  : 100vh;
     position: relative;
 
     &::after {
@@ -355,9 +369,32 @@
         content              : "";
         height               : 100%;
         inset                : 0;
-        opacity              : .1;
+        opacity              : .3;
         position             : absolute;
         width                : 100%;
         z-index              : -1;
+    }
+
+    &__container {
+        @include grid(1fr);
+        gap    : .5rem;
+        padding: 0 .2rem;
+
+        @include devices-large-screens {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include devices(t) {
+            grid-template-columns: repeat(3, 1fr)
+        }
+    }
+
+    &__item {
+
+        img {
+            height    : 100%;
+            object-fit: cover;
+            width     : 100%;
+        }
     }
 }

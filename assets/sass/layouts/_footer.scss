@@ -1,0 +1,18 @@
+@use "../base/mixins"as *;
+
+.footer {
+    @include flex(center, center, 0);
+    height       : 100%;
+    padding-left : 2%;
+    padding-right: 2%;
+    width        : 100%;
+
+    .container{
+        background: green;
+    }
+
+    img {
+        display   : block;
+        object-fit: cover;
+    }
+}
