@@ -28,6 +28,8 @@ assets/
 ├── package.json # Configurações do projeto
 ├── README.md    # Documentação do projeto
 
+```
+
 ## 🛠️ Tecnologias Utilizadas
 - HTML5: Para estruturação das páginas.
 - CSS3 / SASS: Para estilização e layout da página.
