@@ -1,4 +1,4 @@
-export const avengers = [
+export const theAvengers = [
   {
     id: 1,
     name: "Capitão América",

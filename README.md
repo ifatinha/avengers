@@ -24,7 +24,7 @@ assets/
 ├── videos/      # Vídeos promocionais e trailers
 ├── pages/       # Páginas internas da landing page
 │
-├── index.html   # Página principal do projeto
+├── https://ifatinha.github.io/avengers/   # Página principal do projeto
 ├── package.json # Configurações do projeto
 ├── README.md    # Documentação do projeto
 

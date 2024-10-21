@@ -1,5 +1,5 @@
 import {
-  avengers,
+  theAvengers,
   ageOfUltron,
   infinityWar,
   endgame,
@@ -17,20 +17,19 @@ const getDomElements = () => ({
 
 const getPageCharacters = () => {
   const pageId = document.body.id;
-  
-  if (pageId === "avengersPage") {
-    characters = avengers;
+
+  if (pageId === "theAvengersPage") {
+    characters = theAvengers;
   } else if (pageId === "ageOfUltronPage") {
-    characters = avengers.concat(ageOfUltron);
+    characters = theAvengers.concat(ageOfUltron);
   } else if (pageId === "infinityWarPage") {
-    characters = avengers.concat(ageOfUltron).concat(infinityWar);
+    characters = theAvengers.concat(ageOfUltron).concat(infinityWar);
   } else if (pageId === "endgamePage") {
-    characters = avengers
+    characters = theAvengers
       .concat(ageOfUltron)
       .concat(infinityWar)
       .concat(endgame);
   }
-
 };
 
 const updateDom = (character, size) => {
@@ -82,7 +81,6 @@ export const updateCharacterInfo = () => {
 
   getPageCharacters();
   updateDom(characters[currentIndex], characters.length);
-  
 
   ["touchstart", "click"].forEach((eventType) => {
     nextButton.addEventListener(eventType, (event) => {
