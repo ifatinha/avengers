@@ -343,3 +343,21 @@
         width    : 100%;
     }
 }
+
+// gallery
+.gallery {
+    
+    position: relative;
+
+    &::after {
+        @include bg-img("../images/gallery-bg.jpg");
+        background-attachment: fixed;
+        content              : "";
+        height               : 100%;
+        inset                : 0;
+        opacity              : .1;
+        position             : absolute;
+        width                : 100%;
+        z-index              : -1;
+    }
+}

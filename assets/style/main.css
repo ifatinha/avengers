@@ -1302,4 +1302,22 @@ a {
   width: 100%;
 }
 
+.gallery {
+  position: relative;
+}
+.gallery::after {
+  background: url("../images/gallery-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  content: "";
+  height: 100%;
+  inset: 0;
+  opacity: 0.1;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
 /*# sourceMappingURL=main.css.map */
