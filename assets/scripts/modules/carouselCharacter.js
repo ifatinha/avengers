@@ -1,5 +1,5 @@
 import {
-  theAvengers,
+  avengers,
   ageOfUltron,
   infinityWar,
   endgame,
