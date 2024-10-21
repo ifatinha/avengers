@@ -18,14 +18,14 @@ const getDomElements = () => ({
 const getPageCharacters = () => {
   const pageId = document.body.id;
   
-  if (pageId === "theAvengersPage") {
-    characters = theAvengers;
+  if (pageId === "avengersPage") {
+    characters = avengers;
   } else if (pageId === "ageOfUltronPage") {
-    characters = theAvengers.concat(ageOfUltron);
+    characters = avengers.concat(ageOfUltron);
   } else if (pageId === "infinityWarPage") {
-    characters = theAvengers.concat(ageOfUltron).concat(infinityWar);
+    characters = avengers.concat(ageOfUltron).concat(infinityWar);
   } else if (pageId === "endgamePage") {
-    characters = theAvengers
+    characters = avengers
       .concat(ageOfUltron)
       .concat(infinityWar)
       .concat(endgame);
